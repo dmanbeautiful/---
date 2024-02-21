@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理端-新建</title>
+    <link rel="stylesheet" href="管理端-新建.css">
+</head>
+<body>
+    <div class="box">
+        <div class="head">
+            <div class="ydgl" href="javascript:;">云顶管理</div>
+            <a class="xx box1 active" href="javascript:;">信息</a>
+            <a class="fb box1" href="javascript:;">发布</a>
+            <a class="xj box1" href="javascript:;">新建</a>.
+            <div class="pic">
+                <!-- <img
+                        src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86.png"
+                        id="pic" width="35px" height="35px"> -->
+                <img src="images/圆形切片 1.png" id="pic" width="35px" height="35px">
+            </div>
+        </div>
+        <div class="content">
+            <div class="part active">信息板块</div>
+            <div class="part">发布板块</div>
+            <div class="part ">
+                <div class="container">
+                    <h2>切换账号</h2>
+                    <span>新的管理员</span>
+                    <div class="input-field">
+                        <label for="username">用户名：</label>
+                        <input type="text" id="username" placeholder="请输入用户名">
+                    </div>
+                    <div class="input-field">
+                        <label for="password">密码：</label>
+                        <input type="password" id="password" placeholder="请输入密码">
+                    </div>
+                    <button class="btn1" onclick="exchange()">切换</button>
+                    <button class="btn2" onclick="forgotPassword()">忘记密码</button>
+                    <br>
+                    <button class="btn3" onclick="logout()"><img src="images/icon_logout.png">
+                        仅注销</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./管理端-新建.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

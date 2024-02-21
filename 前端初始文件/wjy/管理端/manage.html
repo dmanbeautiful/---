@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="normol.css">
+    <style>
+        .box {
+            height: 800px;
+            width: 1200px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: linear-gradient(to bottom, rgba(210, 230, 255, 1), rgba(255, 0, 0, 0));
+            left: 50%;
+            margin-left: -600px;
+        }
+        .manage{
+          position:absolute;
+          right: 20px;
+          top: 10px;
+        }
+        .name{
+        position: absolute;
+         font-size: 22px;
+         color:powderblue;
+         text-shadow:0px 1px 0px #c0c0c0,
+	     0px 2px 0px #b0b0b0,
+	     0px 3px 0px #a0a0a0,
+	     0px 4px 0px #909090,
+	     0px 5px 10px rgba(0, 0, 0, .9);
+        }
+
+        .words {
+            font-weight: 700;
+            font-size: 40px;
+        }
+
+        .import {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .innerWords {
+            margin-top: 20px;
+            font-size: 16px;
+            color: darkgoldenrod;
+        }
+
+        .information {
+            width: 600px;
+            height: 15px;
+        }
+
+        .informationSpecial {
+            width: 604px;
+            height: 20px;
+        }
+
+        .gender {
+            display: flex;
+            align-items: center;
+        }
+
+        .gender input {
+            margin-right: 10px;
+        }
+
+        .photo {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            top: 700px;
+            left: 100px;
+        }
+
+        .student {
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .submit {
+            position: absolute;
+            top: 625px;
+        }
+
+        .btn {
+            width: 80px;
+            height: 30px;
+            border-radius: 15px;
+            font-size: 15px;
+        }
+
+        .btn:hover {
+            color: white;
+            background-color: green;
+        }
+        .ssh{
+            position: relative;
+            left: -200px;
+            color: cornflowerblue;
+            font-size: 20px;
+        }
+        .bax{
+            position: relative;
+            left: -260px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="manage">
+            <img style="width: 70px;height:68px;" src="https://wjyss.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86%E7%AB%AF.png" />
+            <div class="name">管理端</div>
+        </div>
+        <span class="words">个人信息</span>
+        <div class="import">
+            <span class="innerWords">姓名</span>
+            <input type="text" class="information">
+            <span class="innerWords">年龄</span>
+            <input type="text" class="information">
+            <span class="innerWords">性别</span>
+            <div class="gender">
+                <label>
+                    <input type="radio" name="gender" value="male"> 男
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="female"> 女
+                </label>
+            </div>
+            <span class="innerWords">从属学院</span>
+            <input type="text" class="information">
+            <span class="innerWords">从属方向</span>
+            <select class="informationSpecial">
+                <option value="full">全栈</option>
+                <option value="java">Java</option>
+                <option value="shuKe">数据科学</option>
+                <option value="cpu">CPU&OS</option>
+                <option value="design">设计</option>
+                <option value="secretary">秘书处</option>
+            </select>
+            <span class="innerWords">职位</span> 
+            <input type="textarea" class="information">
+            <span class="innerWords">账号</span>
+            <input type="text" class="information">
+            <span class="innerWords">密码</span>
+            <input type="password" class="information">
+            <div class="ssh">密钥</div>
+            <div class="bax">
+                <input type="password">
+            </div>
+        </div>
+        <div class="photo">
+            <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统">
+            <span class="student">学生管理系统</span>
+        </div>
+        <div class="submit">
+            <button class="btn">提交</button>
+        </div>
+    </div>
+</body>
+
+</html>
