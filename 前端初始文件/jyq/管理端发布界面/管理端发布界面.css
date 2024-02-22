@@ -1,0 +1,134 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.background{
+    position: relative;
+    background-image: linear-gradient(to bottom,rgba(210,230,255,1),rgba(255,0,0,0));
+    background-repeat: no-repeat;
+    height: 800px;
+    width: 1200px;
+    left: 50%;
+    margin-left: -600px;
+}
+.box{
+    position: relative;
+    width: 1050px;
+    height: 700px;
+    left: 50%;
+    margin-left: -525px;
+    top: 30px;
+}
+.head{
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 100px;
+    width: 1050px;
+    height: 100px;
+}
+.ydgl{
+    position: relative;
+    width: 250px;
+    height: 100px;
+    font-size: 35px;
+    font-weight: 900;
+}
+.box1{
+    position: relative;
+    width: 150px;
+    height: 100px;
+    font-size: 23px;
+    font-weight:500;
+
+}
+.pic{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-left: auto; 
+}
+.fb{
+    color: rgb(57, 129, 247);
+}
+.fbxx{
+    width: 1050px;
+    height: 100px;
+    position: relative;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+    font-weight: 800;
+}
+.box2{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 1050px;
+    height: 500px;
+
+}
+.box3{
+    position: relative;
+    width: 510px;
+    height: 500px;
+} 
+.box3_head{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 510px;
+    height: 100px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 100px;
+}
+#dr{
+    margin-left: auto;
+}
+.box3_title{
+    position: relative;
+    width: 510px;
+    height: 30px;
+    line-height: 30px;
+}
+.search{
+    position: relative;
+    width: 510px;
+    height: 40px;
+}
+.xxnr{
+    top: 10px;
+}
+#sr{
+    position: relative;
+    top: 10px;
+    width: 505px;
+    height: 200px;
+    border: none;
+    resize: none;
+    overflow-y: auto;
+}
+button{
+    position: relative;
+    top: 25px;
+    left: 5px;
+    width: 50px;
+    height: 30px;
+    color: white;
+    border: none;
+    font-size: 13px;
+    border-radius: 5px;
+    background-color: rgb(57, 129, 247);
+}
+#search{
+    width: 500px;
+    height: 30px;
+    border: none;
+}
+#search_stu{
+    width: 150px;
+    height: 30px;
+    border: none;
+}
