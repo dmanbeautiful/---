@@ -11,9 +11,14 @@
     <div class="box">
         <div class="head">
             <div class="ydgl">云顶管理</div>
-            <div class="xx box1">信息</div>
-            <div class="fb box1">发布</div>
-            <div class="xj box1">新建</div>
+            <div class="xx box1" id="showXj">信息</div>
+            <div class="fb box1" id="showFb">发布</div>
+            <div class="xj box1">新建
+                <div class="dropdown-content">
+                    <a href="/qht/学生注册.html">学生端</a>
+                    <a href="/qht/管理注册.html">管理端</a>
+                </div>
+            </div>
             <div class="pic">
                 <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86.png" id="pic" width="35px"
                     height="35px">
@@ -27,12 +32,12 @@
                 <span class="scanFrame"></span>
                 <!--scanImage为搜索图标-->
                 <div class="scanBackground">
-                    <img class="scanImage" src="搜索.png@3x.png">
+                    <img class="scanImage" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/搜索.png@3x.png">
                 </div>
             </div>
-            <div class="studentList">1
-                <!-- <div class="studentMessage">
-                    <img class="portrait" src="ai-image@3x.png">
+            <div class="studentList">
+                <div class="studentMessage">
+                    <img class="portrait" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
                     <span class="message">
                         <div class="name"></div>
                         <div class="number"></div>
@@ -43,9 +48,9 @@
                         <span class="buttonAlter">修改</span>
                         <span class="buttonDelete">删除</span>
                     </span>
-                </div> -->
-                <!-- <div class="studentMessage">
-                    <img class="portrait" src="ai-image@3x.png">
+                </div> 
+                <div class="studentMessage">
+                    <img class="portrait" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
                     <span class="message">
                         <div class="name"></div>
                         <div class="number"></div>
@@ -58,7 +63,7 @@
                     </span>
                 </div>
                 <div class="studentMessage">
-                    <img class="portrait" src="ai-image@3x.png">
+                    <img class="portrait" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
                     <span class="message">
                         <div class="name"></div>
                         <div class="number"></div>
@@ -71,7 +76,7 @@
                     </span>
                 </div>
                 <div class="studentMessage">
-                    <img class="portrait" src="ai-image@3x.png">
+                    <img class="portrait" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
                     <span class="message">
                         <div class="name"></div>
                         <div class="number"></div>
@@ -84,7 +89,7 @@
                     </span>
                 </div>
                 <div class="studentMessage">
-                    <img class="portrait" src="ai-image@3x.png">
+                    <img class="portrait" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
                     <span class="message">
                         <div class="name"></div>
                         <div class="number"></div>
@@ -97,7 +102,7 @@
                     </span>
                 </div>
                 <div class="studentMessage">
-                    <img class="portrait" src="ai-image@3x.png">
+                    <img class="portrait" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
                     <span class="message">
                         <div class="name">张三</div>
                         <div class="number">学号:123456</div>
@@ -108,15 +113,15 @@
                         <span class="buttonAlter">修改</span>
                         <span class="buttonDelete">删除</span>
                     </span>
-                </div> -->
+                </div>
             </div>
         <div class="pagination">
-            <!-- 分页按钮将在这里动态生成 -->
+            <!-- 分页按钮将在这里动态生成-->
         </div>
     </div>
 </body>
-<script>
+<!-- <script>
     renderList(1);
     renderPagination();
-</script>
+</script> -->
 </html>

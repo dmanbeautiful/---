@@ -114,10 +114,10 @@ function renderPagination() {
     }
   
 }
-// //先用一个renderList显示第一页列表，再切换
-// renderList(1);
-// //调用分页函数，控制页面数
-// renderPagination();
+//先用一个renderList显示第一页列表，再切换
+renderList(1);
+//调用分页函数，控制页面数
+renderPagination();
 
 
-//检查LIst函数中current处逻辑
+//检查List函数中current处逻辑
