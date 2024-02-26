@@ -152,6 +152,11 @@
             color: black;
             background-color: red;
         }
+
+        .pic {
+            cursor: pointer;
+        }
+
     </style>
 </head>
 
@@ -164,8 +169,8 @@
                 <div class="fb box1">发布</div>
                 <div class="xj box1">新建
                     <div class="dropdown-content">
-                        <a href="#">学生端</a>
-                        <a href="#">管理端</a>
+                        <a href="./学生注册.html">学生端</a>
+                        <a href="./管理注册.html">管理端</a>
                     </div>
                 </div>
                 <div class="pic">
@@ -207,7 +212,22 @@
                 .catch(function (erro) {
                     console.log(erro);
                 });
+            location.href ="./管理登录展示页面.html"
         }
+
+        // var imgEl = document.querySelector("#pic")
+        // imgEl.onclick = function showBox() {
+        //     var box = document.getElementById('box');
+        //     if (box.style.display === 'none') {
+        //         box.style.display = 'block';
+        //         box.classList.add('show');
+        //         box.classList.remove('hide');
+        //     } else {
+        //         box.style.display = 'none';
+        //         box.classList.add('hide');
+        //         box.classList.remove('show');
+        //     }
+        // }
     </script>
 </body>
 

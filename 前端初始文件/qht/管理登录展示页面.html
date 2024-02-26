@@ -57,7 +57,9 @@
         }
 
         .dropdown-content {
-            display: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s, visibility 0.5s;
             position: absolute;
             background-color: #f9f9f9;
             top: 75px;
@@ -89,23 +91,18 @@
         }
 
         .xj:hover .dropdown-content {
-            display: block;
+            opacity: 1;
+            visibility: visible;
         }
 
         .pic {
             position: relative;
-            width: 80px;
+            width: 10px;
             height: 80px;
             margin-left: auto;
         }
-
-        .middleBox {
-            width: 1050px;
-            height: 350px;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
+        #pic:hover{
+            background-color: #fff;
         }
 
         .photo {
@@ -122,46 +119,45 @@
             font-size: 30px;
         }
 
-        .logStu {
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .show {
-            margin: 10px;
-            font-weight: 700;
-            font-size: 16px;
-        }
-
-        .btn {
+        .logo {
             position: absolute;
-            top: 300px;
-            left: 50%;
-            margin-left: -60px;
-            margin-top: 20px;
-            width: 120px;
-            height: 30px;
-            border: 1px solid;
-            border-radius: 10px;
-            background-color: skyblue;
-            color: aliceblue;
-            cursor: pointer;
+            top: 100px;
+
         }
 
-        .btn:hover {
-            color: black;
-            background-color: red;
+        .middlePhoto {
+            height: 600px;
+            width: 600px;
+        }
+        .changeAcc{
+            position: absolute;
+            top: 700px;
+            right: 100px;
+        }
+        .changeAcc button {
+            margin-left: 30px;
+            width: 80px;
+            height: 45px;
+            border-radius: 22px;
+            background-color: white;
+            font-weight: 700;
+        }
+        .changeAcc button:hover {
+            background-color: rgba(57, 129, 247);
+            color: #f1f1f1;
+            font-weight: 700;
         }
     </style>
 </head>
+
 
 <body>
     <div class="box">
         <div class="boxTop">
             <div class="head">
                 <div class="ydgl">云顶管理</div>
-                <div class="xx box1">信息</div>
-                <div class="fb box1">发布</div>
+                <div class="xx box1" id="showXj">信息</div>
+                <div class="fb box1" id="showFb">发布</div>
                 <div class="xj box1">新建
                     <div class="dropdown-content">
                         <a href="./学生注册.html">学生端</a>
@@ -171,42 +167,43 @@
                 <div class="pic">
                     <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86.png" id="pic"
                         width="35px" height="35px">
-                    
                 </div>
             </div>
-            <div class="middleBox">
-                <span class="logStu">注册学生</span>
-                <span class="show">学号</span>
-                <input type="text" class="showAcc">
-                <span class="show">姓名</span>
-                <input type="text" class="showStu">
-                <button class="btn">提交注册</button>
-            </div>
-            <div class="photo">
-                <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统">
-                <span class="student">学生管理系统</span>
-            </div>
+        </div>
+        <div class="logo">
+            <img src="https://jyq-pic.oss-cn-beijing.aliyuncs.com/logo.png" alt="云顶书院" class="middlePhoto">
+        </div>
+        <div class="photo">
+            <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统">
+            <span class="student">学生管理系统</span>
+        </div>
+        <div class="changeAcc">
+            <button id="exitAcc">退出登录</button>
+            <button id="exitSys">退出系统</button>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        var btnEl = document.querySelector(".btn")
-        btnEl.onclick = function () {
-            var showAccEl = document.querySelector(".showAcc")
-            var showStuEl = document.querySelector(".showStu")
-            axios.post("admin/stuRegister", {
-                stuAcc: showAccEl.value,
-                stuName: showStuEl.value
-            })
-                .then(function (response) {
-                    console.log(response);
-                })
-                .catch(function (erro) {
-                    console.log(erro);
-                });
-            location.href="./管理登录展示页面.html"
+        var showXjEl=document.querySelector("#showXj")
+        showXjEl.onclick = function(){
+            location.href="/wjy/修改学生信息(unfinished).html"
         }
+        var showFbEl = document.querySelector("#showFb")
+            showFbEl.onclick = function () {
+                location.href = "/jyq/管理端发布界面/管理端发布界面.html"
+            }
+        var picEl = document.querySelector(".pic")
+            picEl.onclick = function () {
+                alert("现在已经是管理端初始页面了，不要重复点击")
+            }
+        var exitAccEl = document.querySelector("#exitAcc")
+            var exitSysEl = document.querySelector("#exitSys")
+            exitAccEl.onclick = function () {
+                location.href = "/jyq/登录界面-again/登录界面.html"
+            }
+            exitSysEl.onclick = function () {
+                window.close();
+            }
     </script>
 </body>
 

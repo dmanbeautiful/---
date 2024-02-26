@@ -65,6 +65,12 @@ a{
     height: 40px;
     line-height: 40px;
 }
+label{
+    position: absolute;
+    z-index: 99;
+    top: 38px;
+    color: rgba(116,116,116);
+}
 #sr{
     position: relative;
     width: 545px;
@@ -101,6 +107,7 @@ a{
     text-align: center;
     line-height: 30px;
     font-size: 20px;
+    background-image: url('https://jyq-pic.oss-cn-beijing.aliyuncs.com/%E9%AA%8C%E8%AF%81%E5%BA%95.png');
 }
 button{
     margin-left: auto; 
@@ -110,4 +117,16 @@ button{
     width: 130px;
     height: 40px;
     color: white;
+}
+.zc{
+    width: 510px;
+    height: 20px;
+    position: relative;
+    text-align: end;
+    line-height: 20px;
+    color: rgb(57, 129, 247);
+    font-size: 13px;
+}
+input{
+    outline: none;
 }

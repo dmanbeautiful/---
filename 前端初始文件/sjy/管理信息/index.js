@@ -98,3 +98,4 @@ function renderPagination(totalPages) {
 // 初始渲染  
 renderList(objArray, 0, itemsPerPage);
 renderPagination(Math.ceil(objArray.length / itemsPerPage));
+

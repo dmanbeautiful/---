@@ -175,3 +175,63 @@
     font-weight: 600;
     background: rgba(212, 48, 48, 1);
 }
+.back {
+    position: absolute;
+    top: 380px;
+    right:30px ;
+}
+.btn{
+    height: 50px;
+    width: 100px;
+    border-radius: 25px;
+    background-color: wheat;
+}
+.btn:hover{
+    background-color: #fff;
+    color: red;;
+}
+.box1:hover {
+    color: rgba(57, 129, 247);
+}
+
+.dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    position: absolute;
+    background-color: #f9f9f9;
+    top: 75px;
+    left: 45px;
+    height: 52px;
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.xj {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content a {
+    color: black;
+    height: 20px;
+    padding: 3px 6px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    align-items: center;
+    line-height: 20px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.xj:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+}
+#pic:hover {
+    background-color: #fff;
+}

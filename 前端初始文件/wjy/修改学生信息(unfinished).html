@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>24</title>
+    <style>
+        .background {
+            height: 800px;
+            width: 1200px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: linear-gradient(to bottom,
+                    rgba(210, 230, 255, 1),
+                    rgba(255, 0, 0, 0));
+            left: 50%;
+            margin-left: -600px;
+        }
+
+        .box {
+            position: relative;
+            width: 1050px;
+            height: 650px;
+            top: 20px;
+        }
+
+        .head {
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            line-height: 100px;
+            width: 1050px;
+            height: 100px;
+        }
+
+        .ydgl {
+            position: relative;
+            width: 250px;
+            height: 100px;
+            font-size: 35px;
+            font-weight: 900;
+        }
+
+        .box1 {
+            position: relative;
+            width: 150px;
+            height: 100px;
+            font-size: 23px;
+            font-weight: 500;
+
+        }
+
+        .pic {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin-left: auto;
+        }
+
+        .photo {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            top: 700px;
+            left: 100px;
+        }
+
+        .student {
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .left {
+            position: relative;
+            width: 600px;
+            height: 980px;
+            left: -250px;
+            display: flex;
+            flex-direction: column;
+            top: -180px;
+        }
+
+        .boxx {
+            width: 600px;
+            position: relative;
+            height: 80px;
+            border-bottom: 1px solid white;
+        }
+
+        .boxx.b1 {
+            height: 80px;
+            line-height: 80px;
+            font-weight: 600;
+            font-size: 25px;
+        }
+
+        .boxx.b1 img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: auto;
+            margin: auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .boxx img {
+            position: absolute;
+            top: 0;
+            right: auto;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            right: -220px;
+            position: relative;
+        }
+
+        .right {
+            position: absolute;
+            width: 450px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            top: 150px;
+            right: 50px;
+        }
+
+        .bx.b1 {
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 50px;
+        }
+
+        .back {
+            position: absolute;
+            right: 3px;
+            top: 0px;
+        }
+
+        .button:hover {
+            background-color: rgb(57, 129, 247);
+        }
+
+        .bx2 {
+            font-weight: 600;
+            top: 5px;
+            position: relative;
+        }
+
+        .bx3 {
+            top: 23px;
+            width: 400px;
+            position: relative;
+        }
+
+        .bx4 {
+            top: 30px;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .bx5 {
+            top: 40px;
+            position: relative;
+        }
+
+        .bx6 {
+            top: 50px;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .bx7 {
+            position: relative;
+            top: 60px;
+        }
+
+        .bx8 {
+            position: relative;
+            top: 80px;
+        }
+
+        .bx8 .button {
+            background-color: white;
+        }
+
+        .bx8 .button:hover {
+            background-color: rgb(57, 129, 247);
+            color: white;
+        }
+
+        #pagination button {
+            margin: 0 2px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            background-color: #f4f4f4;
+            cursor: pointer;
+        }
+
+        #pagination button:hover {
+            background-color: #ddd;
+        }
+
+        .bottom {
+            position: absolute;
+            top: 500px;
+        }
+        #pic:hover{
+            background-color: #fff;
+        }
+        .box1:hover {
+            color: rgba(57, 129, 247);
+        }
+
+        .dropdown-content {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s, visibility 0.5s;
+            position: absolute;
+            background-color: #f9f9f9;
+            top: 75px;
+            left: 45px;
+            height: 52px;
+            min-width: 60px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .xj {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            height: 20px;
+            padding: 3px 6px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            align-items: center;
+            line-height: 20px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .xj:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="box">
+            <div class="head">
+                <div class="ydgl">云顶管理</div>
+                <div class="xx box1" id="showXj">信息</div>
+                <div class="fb box1" id="showFb">发布</div>
+                <div class="xj box1">新建
+                    <div class="dropdown-content">
+                        <a href="/qht/学生注册.html">学生端</a>
+                        <a href="/qht/管理注册.html">管理端</a>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86.png" id="pic"
+                        width="35px" height="35px">
+                </div>
+            </div>
+        </div>
+        <div class="photo">
+            <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统">
+            <span class="student">学生管理系统</span>
+        </div>
+        <div class="left">
+            <div class="boxx b1">学生列表
+                <img src="https://wjyss.oss-cn-beijing.aliyuncs.com/%E7%94%BB%E6%9D%BF%201.png" />
+            </div>
+            <div class="boxx b" style="display: flex; align-items: center; justify-content: center;">
+                <div style="margin-right: 20px;">
+                    <p style="line-height: 0.4; font-size: 15px; font-weight: 600;">李四</p>
+                    <p style="font-size: 15px; color: gray;">学号：234567<br>方向：设计</p>
+                </div>
+                <img src="https://wjyss.oss-cn-beijing.aliyuncs.com/ai-image.png"
+                    style="max-width: 100px; height: auto; margin-right: 20px;" />
+                <div class="btn">
+                    <button
+                        style="padding: 5px 10px; background-color: rgb(57,129,247); color:black; border: none; cursor: pointer; border-radius: 10px;">重置</button>
+                </div>
+            </div>
+            <div class="boxx b" style="display: flex; align-items: center; justify-content: center;">
+                <div style="margin-right: 20px;">
+                    <p style="line-height: 0.4; font-size: 15px; font-weight: 600;">李四</p>
+                    <p style="font-size: 15px; color: gray;">学号：234567<br>方向：设计</p>
+                </div>
+                <img src="https://wjyss.oss-cn-beijing.aliyuncs.com/ai-image.png"
+                    style="max-width: 100px; height: auto; margin-right: 20px;" />
+                <div class="btn">
+                    <button
+                        style="padding: 5px 10px; background-color: rgb(57,129,247); color:black; border: none; cursor: pointer; border-radius: 10px;">重置</button>
+                </div>
+            </div>
+            <div class="boxx b" style="display: flex; align-items: center; justify-content: center;">
+                <div style="margin-right: 20px;">
+                    <p style="line-height: 0.4; font-size: 15px; font-weight: 600;">李四</p>
+                    <p style="font-size: 15px; color: gray;">学号：234567<br>方向：设计</p>
+                </div>
+                <img src="https://wjyss.oss-cn-beijing.aliyuncs.com/ai-image.png"
+                    style="max-width: 100px; height: auto; margin-right: 20px;" />
+                <div class="btn">
+                    <button
+                        style="padding: 5px 10px; background-color: rgb(57,129,247); color:black; border: none; cursor: pointer; border-radius: 10px;">重置</button>
+                </div>
+            </div>
+            <div class="boxx b" style="display: flex; align-items: center; justify-content: center;">
+                <div style="margin-right: 20px;">
+                    <p style="line-height: 0.4; font-size: 15px; font-weight: 600;">李四</p>
+                    <p style="font-size: 15px; color: gray;">学号：234567<br>方向：设计</p>
+                </div>
+                <img src="https://wjyss.oss-cn-beijing.aliyuncs.com/ai-image.png"
+                    style="max-width: 100px; height: auto; margin-right: 20px;" />
+                <div class="btn">
+                    <button
+                        style="padding: 5px 10px; background-color: rgb(57,129,247); color:black; border: none; cursor: pointer; border-radius: 10px;">重置</button>
+                </div>
+            </div>
+            <div class="boxx b" style="display: flex; align-items: center; justify-content: center;">
+                <div style="margin-right: 20px;">
+                    <p style="line-height: 0.4; font-size: 15px; font-weight: 600;">李四</p>
+                    <p style="font-size: 15px; color: gray;">学号：234567<br>方向：设计</p>
+                </div>
+                <img src="https://wjyss.oss-cn-beijing.aliyuncs.com/ai-image.png"
+                    style="max-width: 100px; height: auto; margin-right: 20px;" />
+                <div class="btn">
+                    <button
+                        style="padding: 5px 10px; background-color: rgb(57,129,247); color:black; border: none; cursor: pointer; border-radius: 10px;">重置</button>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="bx b1">修改学生信息
+                <div class="back">
+                    <button style="padding: 5px 10px; " class="backButton">返回</button>
+                </div>
+            </div>
+            <div class="bx2">姓名</div>
+            <div class="bx3">
+                <input type="text" style="border: none;height: 28px;width: 450px; ">
+            </div>
+            <div class="bx4">学号</div>
+            <div class="bx5">
+                <input type="text" style="border: none;height: 28px;width: 450px; ">
+            </div>
+            <div class="bx6">方向</div>
+            <div class="bx7"><input type="text" style="border: none;height: 28px;width: 450px; "></div>
+            <div class="bx8">
+                <button class="button"
+                    style="padding: 8px 13px; border-radius: 8px ;border: none; margin-right: 30px;">保存</button>
+                <button class="button" style="padding: 8px 13px; border-radius: 8px ;border: none;">取消</button>
+            </div>
+            <div class="bottom">
+                <div id="content">
+                    <ul id="itemsList"></ul>
+                </div>
+                <div id="pagination">
+                </div>
+            </div>
+        </div>
+        <script>
+            // 假设你有一个包含所有数据的数组  
+            var allItems = ["Item 1", "Item 2", "Item 3", "1", "5", "5", "4", "9", "8", "7"];
+
+            // 每页显示的项目数量  
+            var itemsPerPage = 5;
+
+            // 当前页码  
+            var currentPage = 1;
+
+            // 渲染列表  
+            function renderList(items, start, end) {
+                var list = document.getElementById('itemsList');
+                list.innerHTML = ''; // 清空列表  
+
+                for (var i = start; i < end && i < items.length; i++) {
+                    var li = document.createElement('li');
+                    li.textContent = items[i];
+                    list.appendChild(li);
+                }
+            }
+
+            // 渲染分页按钮  
+            function renderPagination(totalPages) {
+                var pagination = document.getElementById('pagination');
+                pagination.innerHTML = ''; // 清空分页控件  
+
+                for (var i = 1; i <= totalPages; i++) {
+                    var button = document.createElement('button');
+                    button.textContent = i;
+                    button.addEventListener('click', function () {
+                        currentPage = parseInt(this.textContent);
+                        renderList(allItems, (currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+                    });
+                    pagination.appendChild(button);
+                }
+            }
+
+            // 初始渲染  
+            renderList(allItems, 0, itemsPerPage);
+            renderPagination(Math.ceil(allItems.length / itemsPerPage));
+
+
+            var backButtonEl = document.querySelector(".backButton")
+            backButtonEl.onclick = function () {
+                location.href = "/qht/管理登录展示页面.html"
+            }
+
+            var showXjEl = document.querySelector("#showXj")
+            showXjEl.onclick = function () {
+                location.href = "/wjy/修改学生信息(unfinished).html"
+            }
+            var showFbEl = document.querySelector("#showFb")
+            showFbEl.onclick = function () {
+                location.href = "/jyq/管理端发布界面/管理端发布界面.html"
+            }
+            var picEl = document.querySelector(".pic")
+                picEl.onclick = function () {
+                    location.href = "/qht/管理登录展示页面.html"
+                }
+        </script>
+</body>
+
+</html>

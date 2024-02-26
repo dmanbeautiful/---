@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>登录界面</title>
     <link rel="stylesheet" type="text/css" href="登录界面.css" >
-    <script src="登录界面.js"></script>  
+    <script src="https://unpkg.com/axios@0.20.0/dist/axios.min.js"></script>  
+    <script src="登录界面网络请求.js"></script>
 </head>
 <body>
     <div class="background">
@@ -18,10 +19,10 @@
             </div>
             <div class="enter">
                 <div class="title">登录</div>
-                <div class="id font">用户名</div>
-                <div class="input"><input id="sr"></div>
-                <div class="psw font">密码</div>
-                <div class="input"><input id="sr" type="password"></div>
+                <div class="id font"><label for="username" id="yh" >&nbsp;用户</label></div>
+                <div class="input"><input id="sr" class="nameShow"></div>
+                <div class="id font"><label for="password" id="mm">&nbsp;密码</label></div>
+                <div class="input"><input id="sr" type="password" class="passShow"></div>
                 <div class="check">
                     <input type="checkbox" >记住我&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="checkbox" >自动登录
@@ -29,12 +30,15 @@
                 </div>
                 <div class="yzm">
                     <span><input id="yzm-input" placeholder="请输入验证码"></span>
-                    <span><div class="number" id="number"><img src="验证底.png" width="100px" height="35px"></div></span>
+                    <span><div class="number" id="number"></div></span>
                     <a href="#" id="change">看不清换一张</a>
                     <button id="button">登录</button>
                 </div>
+                <div class="zc"><a href="#">立即注册</a></div>
             </div>
         </div>
     </div>
+
+    <script src="登录界面.js"></script>
 </body>
 </html>

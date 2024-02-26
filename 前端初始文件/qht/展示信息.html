@@ -19,16 +19,18 @@
             width: 40px;
         }
 
-        .photo1{
+        .photo1 {
             position: absolute;
             right: 70px;
             top: 30px;
         }
-        .photo2{
+
+        .photo2 {
             position: absolute;
             right: 5px;
             top: 30px;
         }
+
         .topShow {
             position: absolute;
             top: 30px;
@@ -68,18 +70,21 @@
             background: rgba(255, 255, 255, 0.4);
             border-radius: 20px;
         }
-        .showMiddle{
+
+        .showMiddle {
             position: relative;
             top: 20px;
             padding: 20px;
             font-weight: 700;
             font-size: 16px;
         }
-        .innerInformation img{
+
+        .innerInformation img {
             height: 40px;
             width: 40px;
         }
-        .basicShow{
+
+        .basicShow {
             position: relative;
             top: 20px;
             left: 20px;
@@ -87,10 +92,12 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        .basicShow img{
+
+        .basicShow img {
             margin-top: 10px;
         }
-        .schoolShow{
+
+        .schoolShow {
             position: relative;
             top: 20px;
             left: 20px;
@@ -98,17 +105,20 @@
             flex-direction: column;
             justify-content: space-between
         }
-        .schoolShow img{
+
+        .schoolShow img {
             margin-top: 10px;
         }
-        .control{
+
+        .control {
             position: relative;
             display: flex;
             flex-direction: column;
             left: 450px;
             top: 80px;
         }
-        .control button{
+
+        .control button {
             margin-top: 20px;
             width: 120px;
             height: 30px;
@@ -117,11 +127,11 @@
             background-color: skyblue;
             color: aliceblue;
         }
-        .control button:hover{
+
+        .control button:hover {
             color: black;
             background-color: red;
         }
-        
     </style>
 </head>
 
@@ -129,9 +139,12 @@
     <div class="box">
         <div class="nav">
             <span class="topShow">云顶学子</span>
-            <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%85%AC%E5%91%8A.png" alt="" class="photo1">
-            <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E9%80%9A%E7%9F%A5.png" alt="" class="photo2
-            ">
+            <a href="#">
+                <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%85%AC%E5%91%8A.png" alt="" class="photo1">
+            </a>
+            <a href="#"><img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E9%80%9A%E7%9F%A5.png" alt=""
+                    class="photo2">
+            </a>
         </div>
         <span class="middleInformation">个人资料</span>
         <div class="innerInformation">
@@ -163,11 +176,26 @@
             </div>
         </div>
         <div class="control">
-            <button>修改信息</button>
-            <button>修改密码</button>
-            <button>退出登录</button>
+            <button id="changeInfo">修改信息</button>
+            <button id="changePass">修改密码</button>
+            <button id="exitLog">退出登录</button>
         </div>
     </div>
+
+    <script>
+        var infoEl = document.querySelector("#changeInfo");
+        var passEl = document.querySelector("#changePass");
+        var exitEl = document.querySelector("#exitLog");
+        infoEl.onclick = function () {
+            location.href="../wjy/修改学生信息(unfinished).html"//学生端修改信息(未完善)
+        }
+        passEl.onclick = function () {
+            location.href = "../sjy/修改密码/src/Change Code.html"
+        }   
+        exitEl.onclick = function () {
+            location.href = "../jyq/登录界面-again/登录界面.html"
+        }
+    </script>
 </body>
 
 </html>
