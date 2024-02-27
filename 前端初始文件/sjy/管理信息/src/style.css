@@ -175,21 +175,32 @@
     font-weight: 600;
     background: rgba(212, 48, 48, 1);
 }
+.pagination{
+    width: 400px;
+    height: 200px;
+    /* background-color: pink; */
+    position: absolute;
+    margin-left: 300px;
+}
 .back {
     position: absolute;
     top: 380px;
-    right:30px ;
+    right: 30px;
 }
-.btn{
+
+.btn {
     height: 50px;
     width: 100px;
     border-radius: 25px;
     background-color: wheat;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #fff;
-    color: red;;
+    color: red;
+    ;
 }
+
 .box1:hover {
     color: rgba(57, 129, 247);
 }
@@ -232,6 +243,7 @@
     opacity: 1;
     visibility: visible;
 }
+
 #pic:hover {
     background-color: #fff;
 }

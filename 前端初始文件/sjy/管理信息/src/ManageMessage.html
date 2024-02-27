@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
 </head>
-
 <body>
     <div class="box">
         <div class="head">
@@ -34,13 +32,25 @@
                 <span class="scanFrame"></span>
                 <!--scanImage为搜索图标-->
                 <div class="scanBackground">
-                    <img class="scanImage"
-                        src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E6%90%9C%E7%B4%A2.png@3x.png">
+                    <img class="scanImage" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/搜索.png@3x.png">
                 </div>
             </div>
             <div class="studentList">
                 <div class="studentMessage">
-                    <img class="portrait" src="https://damn-meili.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
+                    <img class="portrait" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
+                    <span class="message">
+                        <div class="name"></div>
+                        <div class="number"></div>
+                        <div class="direction"></div>
+                    </span>
+                    <span class="button">
+                        <span class="buttonReset">重置</span>
+                        <span class="buttonAlter">修改</span>
+                        <span class="buttonDelete">删除</span>
+                    </span>
+                </div> 
+                <div class="studentMessage">
+                    <img class="portrait" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
                     <span class="message">
                         <div class="name"></div>
                         <div class="number"></div>
@@ -53,7 +63,7 @@
                     </span>
                 </div>
                 <div class="studentMessage">
-                    <img class="portrait" src="https://damn-meili.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
+                    <img class="portrait" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
                     <span class="message">
                         <div class="name"></div>
                         <div class="number"></div>
@@ -66,7 +76,7 @@
                     </span>
                 </div>
                 <div class="studentMessage">
-                    <img class="portrait" src="https://damn-meili.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
+                    <img class="portrait" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
                     <span class="message">
                         <div class="name"></div>
                         <div class="number"></div>
@@ -79,7 +89,7 @@
                     </span>
                 </div>
                 <div class="studentMessage">
-                    <img class="portrait" src="https://damn-meili.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
+                    <img class="portrait" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
                     <span class="message">
                         <div class="name"></div>
                         <div class="number"></div>
@@ -92,20 +102,7 @@
                     </span>
                 </div>
                 <div class="studentMessage">
-                    <img class="portrait" src="https://damn-meili.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
-                    <span class="message">
-                        <div class="name"></div>
-                        <div class="number"></div>
-                        <div class="direction"></div>
-                    </span>
-                    <span class="button">
-                        <span class="buttonReset">重置</span>
-                        <span class="buttonAlter">修改</span>
-                        <span class="buttonDelete">删除</span>
-                    </span>
-                </div>
-                <div class="studentMessage">
-                    <img class="portrait" src="https://damn-meili.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
+                    <img class="portrait" src="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png">
                     <span class="message">
                         <div class="name">张三</div>
                         <div class="number">学号:123456</div>
@@ -118,32 +115,13 @@
                     </span>
                 </div>
             </div>
-            <div class="back">
-                <button class="btn">返回</button>
-            </div>
-            <div class="pagination">
-                <!-- 分页按钮将在这里动态生成 -->
-            </div>
+        <div class="pagination">
+            <!-- 分页按钮将在这里动态生成-->
         </div>
-
-        <script>
-            var btnEL = document.querySelector(".btn")
-            btnEL.onclick = function () {
-                location.href = "/qht/管理登录展示页面.html"
-            }
-            var showXjEl = document.querySelector("#showXj")
-            showXjEl.onclick = function () {
-                location.href = "/wjy/修改学生信息(unfinished).html"
-            }
-            var showFbEl = document.querySelector("#showFb")
-            showFbEl.onclick = function () {
-                location.href = "/jyq/管理端发布界面/管理端发布界面.html"
-            }
-            var picEl =document.querySelector(".pic")
-            picEl.onclick = function(){
-                location.href="/qht/管理登录展示页面.html"
-            }
-        </script>
+    </div>
 </body>
-
+<!-- <script>
+    renderList(1);
+    renderPagination();
+</script> -->
 </html>
