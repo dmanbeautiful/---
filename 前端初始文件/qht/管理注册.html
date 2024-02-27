@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 800px;
+            width: 1200px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: linear-gradient(to bottom, rgba(210, 230, 255, 1), rgba(255, 0, 0, 0));
+            left: 50%;
+            margin-left: -600px;
+        }
+
+        .boxTop {
+            position: relative;
+            width: 1050px;
+            height: 650px;
+            top: 30px;
+        }
+
+        .head {
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            line-height: 100px;
+            width: 1050px;
+            height: 100px;
+        }
+
+        .ydgl {
+            position: relative;
+            width: 250px;
+            height: 100px;
+            font-size: 35px;
+            font-weight: 900;
+        }
+
+        .box1 {
+            position: relative;
+            width: 150px;
+            height: 100px;
+            font-size: 23px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .box1:hover {
+            color: rgba(57, 129, 247);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            top: 75px;
+            left: 45px;
+            height: 52px;
+            min-width: 60px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .xj {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            height: 20px;
+            padding: 3px 6px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            align-items: center;
+            line-height: 20px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .xj:hover .dropdown-content {
+            display: block;
+        }
+
+        .pic {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin-left: auto;
+        }
+
+        .middleBox {
+            width: 1050px;
+            height: 350px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            top: 700px;
+            left: 100px;
+        }
+
+        .student {
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .logStu {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .show {
+            margin: 10px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .btn {
+            position: absolute;
+            top: 350px;
+            left: 50%;
+            margin-left: -60px;
+            margin-top: 20px;
+            width: 120px;
+            height: 30px;
+            border: 1px solid;
+            border-radius: 10px;
+            background-color: skyblue;
+            color: aliceblue;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            color: black;
+            background-color: red;
+        }
+
+        .pic {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="boxTop">
+            <div class="head">
+                <div class="ydgl">云顶管理</div>
+                <div class="xx box1">信息</div>
+                <div class="fb box1">发布</div>
+                <div class="xj box1">新建
+                    <div class="dropdown-content">
+                        <a href="./学生注册.html">学生端</a>
+                        <a href="./管理注册.html">管理端</a>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86.png" id="pic"
+                        width="35px" height="35px">
+                </div>
+            </div>
+            <div class="middleBox">
+                <span class="logStu">注册管理</span>
+                <span class="show">账号</span>
+                <input type="text" class="showAcc">
+                <span class="show">密码</span>
+                <input type="password" class="showPas">
+                <span class="show">唯一密匙</span>
+                <input type="password" class="showKey">
+                <button class="btn">提交注册</button>
+            </div>
+            <div class="photo">
+                <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统">
+                <span class="student">学生管理系统</span>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        var btnEl = document.querySelector(".btn")
+        btnEl.onclick = function () {
+            var showAccEl = document.querySelector(".showAcc")
+            var showPasEl = document.querySelector(".showPas")
+            var showKeyEl = document.querySelector(".showKey")
+            axios.post("admin/stuRegister", {
+                admAcc: showAccEl.value,
+                admPassword: showPasEl.value,
+                admKey: showKeyEl.value
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (erro) {
+                    console.log(erro);
+                });
+            location.href ="./管理登录展示页面.html"
+        }
+
+        // var imgEl = document.querySelector("#pic")
+        // imgEl.onclick = function showBox() {
+        //     var box = document.getElementById('box');
+        //     if (box.style.display === 'none') {
+        //         box.style.display = 'block';
+        //         box.classList.add('show');
+        //         box.classList.remove('hide');
+        //     } else {
+        //         box.style.display = 'none';
+        //         box.classList.add('hide');
+        //         box.classList.remove('show');
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

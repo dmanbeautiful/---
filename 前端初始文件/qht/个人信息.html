@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="normol.css">
+    <style>
+        .box {
+            height: 800px;
+            width: 1200px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: linear-gradient(to bottom, rgba(210, 230, 255, 1), rgba(255, 0, 0, 0));
+            left: 50%;
+            margin-left: -600px;
+        }
+
+        .words {
+            font-weight: 700;
+            font-size: 40px;
+        }
+
+        .import {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .innerWords {
+            margin-top: 20px;
+            font-size: 16px;
+            color: darkgoldenrod;
+        }
+
+        .information {
+            width: 600px;
+            height: 15px;
+        }
+
+        .informationSpecial {
+            width: 604px;
+            height: 20px;
+        }
+
+        .gender {
+            display: flex;
+            align-items: center;
+        }
+
+        .gender input {
+            margin-right: 10px;
+        }
+
+        .photo {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            top: 700px;
+            left: 100px;
+        }
+
+        .student {
+            font-weight: 700;
+            font-size: 30px;
+        }
+        .submit {
+            position: absolute;
+            top: 680px;
+        }
+        .btn {
+            width: 80px;
+            height: 30px;
+            border-radius: 15px;
+            font-size: 15px;
+        }
+        .btn:hover{
+            color: white;
+            background-color: green;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="words">个人信息</span>
+        <div class="import">
+            <span class="innerWords">姓名</span>
+            <input type="text" class="information">
+            <span class="innerWords">年龄</span>
+            <input type="text" class="information">
+            <span class="innerWords">性别</span>
+            <div class="gender">
+                <label>
+                    <input type="radio" name="gender" value="male"> 男
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="female"> 女
+                </label>
+            </div>
+            <span class="innerWords">从属学院</span>
+            <input type="text" class="information">
+            <span class="innerWords">从属方向</span>
+            <select class="informationSpecial">
+                <option value="full">全栈</option>
+                <option value="java">Java</option>
+                <option value="shuKe">数据科学</option>
+                <option value="cpu">CPU&OS</option>
+                <option value="design">设计</option>
+                <option value="secretary">秘书处</option>
+            </select>
+            <span class="innerWords" >获奖经历</span>
+            <textarea class="information" placeholder="请输入内容" rows="4" cols="50"></textarea>
+            <span class="innerWords">职位</span>
+            <input type="textarea" class="information">
+            <span class="innerWords">学号</span>
+            <input type="text" class="information">
+            <span class="innerWords">密保信息1</span>
+            <input type="text" class="information">
+            <span class="innerWords">密保信息1</span>
+            <input type="text" class="information">
+        </div>
+        <div class="photo">
+            <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统">
+            <span class="student">学生管理系统</span>
+        </div>
+        <div class="submit">
+            <button class="btn">提交</button>
+        </div>
+    </div>
+
+    <script>
+        var btnEl = document.querySelector(".btn")
+        btnEl.onclick =function(){
+            location.href="./学生信息的中转站.html"
+        }
+    </script>
+</body>
+
+</html>

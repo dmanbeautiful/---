@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>管理端发布界面</title>
+    <link rel="stylesheet" type="text/css" href="管理端发布界面.css">
+    <script src="管理端发布界面.js"></script>
+</head>
+
+<body>
+    <div class="background">
+        <div class="box">
+            <div class="head">
+                <div class="ydgl">云顶管理</div>
+                <div class="xx box1" id="showXj">信息</div>
+                <div class="fb box1" id="showFb">发布</div>
+                <div class="xj box1">新建
+                    <div class="dropdown-content">
+                        <a href="/qht/学生注册.html">学生端</a>
+                        <a href="/qht/管理注册.html">管理端</a>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86.png" id="pic"
+                        width="35px" height="35px">
+                </div>
+            </div>
+            <div class="fbxx">发布消息</div>
+            <div class="box2">
+                <div class="gr box3">
+                    <div class="box3_head">给个人发布
+                        <img src="https://jyq-pic.oss-cn-beijing.aliyuncs.com/%E5%8D%95%E4%BA%BA.png" id="dr"
+                            width="32px" height="32px">
+                    </div>
+                    <div class="box3_title">接收人姓名</div>
+                    <div class="search">
+                        <input id="search_stu">
+                    </div>
+                    <div class="box3_title xxnr">消息内容</div>
+                    <textarea id="sr"></textarea><br>
+                    <button class="btn">发送</button>
+                </div>
+                <div class="fx box3">
+                    <div class="box3_head">给方向发布
+                        <img src="https://jyq-pic.oss-cn-beijing.aliyuncs.com/%E5%A4%9A%E4%BA%BA.png" id="dr"
+                            width="32px" height="32px">
+                    </div>
+                    <div class="box3_title">选择方向</div>
+                    <div class="search">
+                        <select id="search">
+                            <option>设计</option>
+                            <option>开发</option>
+                            <option>秘书处</option>
+                        </select>
+                    </div>
+                    <div class="box3_title xxnr">消息内容</div>
+                    <textarea id="sr"></textarea><br>
+                    <button class="btnTwo">发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var btnEl = document.querySelector(".btn")
+        btnEl.onclick = function () {
+            location.href = "/qht/管理登录展示页面.html"
+        }
+        var btnTwoEl = document.querySelector(".btnTwo")
+        btnTwoEl.onclick = function () {
+            location.href = "/qht/管理登录展示页面.html"
+        }
+
+        var showXjEl = document.querySelector("#showXj")
+        showXjEl.onclick = function () {
+            location.href = "/wjy/修改学生信息(unfinished).html"
+        }
+        var showFbEl = document.querySelector("#showFb")
+        showFbEl.onclick = function () {
+            location.href = "/jyq/管理端发布界面/管理端发布界面.html"
+        }
+        var picEl = document.querySelector(".pic")
+        picEl.onclick = function () {
+            location.href = "/qht/管理登录展示页面.html"
+        }
+    </script>
+</body>
+
+</html>

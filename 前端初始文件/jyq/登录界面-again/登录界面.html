@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面</title>
+    <link rel="stylesheet" type="text/css" href="登录界面.css" >
+    <script src="https://unpkg.com/axios@0.20.0/dist/axios.min.js"></script>  
+    <script src="登录界面网络请求.js"></script>
+</head>
+<body>
+    <div class="background">
+        <div class="box">
+            <div class="head">
+                &nbsp;&nbsp;&nbsp;<img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统" id="stu">
+                &nbsp;学生管理系统
+            </div>
+            <div class="pic">
+                <img src="https://jyq-pic.oss-cn-beijing.aliyuncs.com/logo.png" width="400px" height="400px" alt="logo">
+            </div>
+            <div class="enter">
+                <div class="title">登录</div>
+                <div class="id font"><label for="username" id="yh" >&nbsp;用户</label></div>
+                <div class="input"><input id="sr" class="nameShow"></div>
+                <div class="id font"><label for="password" id="mm">&nbsp;密码</label></div>
+                <div class="input"><input id="sr" type="password" class="passShow"></div>
+                <div class="check">
+                    <input type="checkbox" >记住我&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" >自动登录
+                    <a href="#" id="forget">忘记密码？</a>
+                </div>
+                <div class="yzm">
+                    <span><input id="yzm-input" placeholder="请输入验证码"></span>
+                    <span><div class="number" id="number"></div></span>
+                    <a href="#" id="change">看不清换一张</a>
+                    <button id="button">登录</button>
+                </div>
+                <div class="zc"><a href="#">立即注册</a></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="登录界面.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: rgb(57, 129, 247);
+}
+.background{
+    position: relative;
+    background-image: linear-gradient(to bottom,rgba(210,230,255,1),rgba(255,0,0,0));
+    background-repeat: no-repeat;
+    height: 800px;
+    width: 1200px;
+    left: 50%;
+    margin-left: -600px;
+}
+.box{
+    position: relative;
+    width: 1100px;
+    height: 600px;
+    left: 50%;
+    margin-left: -550px;
+    top: 100px;
+}
+.head{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 1100px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 500;
+}
+#stu{
+    width: 30px;
+    height: 30px;
+}
+.pic{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    top: 70px;
+    left: 40px;
+}
+.enter{
+    position: relative;
+    height: 400px;
+    width: 550px;
+    left: 500px;
+    top: -300px;
+}
+.title{
+    position: relative;
+    width: 550px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    font-size: 38px;
+    font-weight: 1000;
+}
+.font{
+    position: relative;
+    width: 550px;
+    height: 40px;
+    line-height: 40px;
+}
+label{
+    position: absolute;
+    z-index: 99;
+    top: 38px;
+    color: rgba(116,116,116);
+}
+#sr{
+    position: relative;
+    width: 545px;
+    height: 35px;
+    border: none;
+}
+.check{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 550px;
+    height: 45px;
+    font-size: 15px;
+}
+.yzm{
+    position: relative;
+    width: 550px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+#forget {
+    margin-left: auto; 
+}
+#yzm-input{
+    width: 150px;
+    height: 35px;
+    border: none;
+    border-radius: 2px;
+}
+.number{
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    background-image: url('https://jyq-pic.oss-cn-beijing.aliyuncs.com/%E9%AA%8C%E8%AF%81%E5%BA%95.png');
+}
+button{
+    margin-left: auto; 
+    background-color: rgb(57, 129, 247);
+    border: none;
+    border-radius: 5px;
+    width: 130px;
+    height: 40px;
+    color: white;
+}
+.zc{
+    width: 510px;
+    height: 20px;
+    position: relative;
+    text-align: end;
+    line-height: 20px;
+    color: rgb(57, 129, 247);
+    font-size: 13px;
+}
+input{
+    outline: none;
+}
