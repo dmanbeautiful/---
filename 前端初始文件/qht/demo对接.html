@@ -15,12 +15,13 @@
         var btnEl = document.querySelector(".btn")
         var getBtnEl = document.querySelector(".getBtn")
         btnEl.onclick = function () {
-            axios.post("admin/stuRegister", {
-                stuAcc: '2023001876',
-                stuName: '束国梁'
+            axios.post("http://101.7.165.147:8080/admin/Login", {
+                admAcc: '2024',
+                admPassword: '137321'
             })
                 .then(function (response) {
-                    console.log(response);
+                    window.localStorage.setItem('Authorization',response.data.token)
+
                 })
                 .catch(function (erro) {
                     console.log(erro);

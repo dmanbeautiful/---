@@ -152,6 +152,9 @@
             color: black;
             background-color: red;
         }
+        #pic:hover{
+            background-color: #fff;
+        }
     </style>
 </head>
 
@@ -207,6 +210,10 @@
                 });
             location.href="./管理登录展示页面.html"
         }
+        var picEl = document.querySelector(".pic")
+            picEl.onclick = function () {
+                location.href = "/qht/管理登录展示页面.html"
+            }
     </script>
 </body>
 

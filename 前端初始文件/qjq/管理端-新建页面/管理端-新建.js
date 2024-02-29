@@ -10,7 +10,7 @@ function forgotPassword() {
 
 function logout() {
     //提示注销账号
-    alert('您已注销账号，即将返回登陆首页面');
+    alert('您已退出登录，即将返回登陆首页面');
     //下面写代码使网页地址跳转到登录首页面
     window.location.href = 'login.html';
 }

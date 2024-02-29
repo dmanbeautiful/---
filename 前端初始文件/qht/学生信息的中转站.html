@@ -58,7 +58,9 @@
             height: 80px;
             margin-left: auto;
         }    
-
+        .pic:hover{
+            background-color: #fff;
+        }
         .box1:hover {
             color: rgba(57, 129, 247);
         }
@@ -121,8 +123,13 @@
         }
         var backInfoEl = document.querySelector("#backInfo")
         backInfoEl.onclick = function(){
+            alert('您已退出账号，即将返回登陆首页面')
             location.href="/jyq/登录界面-again/登录界面.html"
         }
+        var picEl = document.querySelector(".pic")
+            picEl.onclick = function () {
+                alert("您现在就是学生端初始页面，不要重复点击")
+            }
     </script>
 </body>
 

@@ -101,7 +101,8 @@
             height: 80px;
             margin-left: auto;
         }
-        #pic:hover{
+
+        #pic:hover {
             background-color: #fff;
         }
 
@@ -119,21 +120,12 @@
             font-size: 30px;
         }
 
-        .logo {
-            position: absolute;
-            top: 100px;
-
-        }
-
-        .middlePhoto {
-            height: 600px;
-            width: 600px;
-        }
-        .changeAcc{
+        .changeAcc {
             position: absolute;
             top: 700px;
             right: 100px;
         }
+
         .changeAcc button {
             margin-left: 30px;
             width: 80px;
@@ -142,10 +134,64 @@
             background-color: white;
             font-weight: 700;
         }
+
         .changeAcc button:hover {
             background-color: rgba(57, 129, 247);
             color: #f1f1f1;
             font-weight: 700;
+        }
+
+        .reviewInfo {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 150px;
+            height: 500px;
+            width: 900px;
+        }
+
+        .showReview {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 10px 0;
+            width: 900px;
+            height: 245px;
+            border: 2px solid darksalmon;
+        }
+
+        .showReview div {
+            width: 800px;
+            height: 30px;
+            /* background-color: black; */
+        }
+
+        .anniu button {
+            position: relative;
+            top: -50px;
+            left: 720px;
+            height: 30px;
+            width: 50px;
+            border-radius: 20px;
+            border: 1px solid;
+        }
+
+        .showReview div button:hover {
+            cursor: pointer;
+            color: orange;
+            background-color: darkslategray;
+        }
+
+        .showReview img {
+            position: relative;
+            top: -10px;
+            height: 40px;
+            width: 40px;
+        }
+
+        .showReview div span {
+            position: relative;
+            top: -25px;
         }
     </style>
 </head>
@@ -170,41 +216,70 @@
                 </div>
             </div>
         </div>
-        <div class="logo">
-            <img src="https://jyq-pic.oss-cn-beijing.aliyuncs.com/logo.png" alt="云顶书院" class="middlePhoto">
+        <!-- 书院，方向，获奖，职位 -->
+        <div class="reviewInfo">
+            <div class="showReview">
+                <span class="stuChangeNam">学生姓名:</span>
+                <span>需要修改的信息:</span>
+                <div class="shuyuan">
+                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/学院切片 4.png" alt="">
+                    <span>书院:</span>
+                    <span></span>
+                    <div class="anniu">
+                        <button>同意</button>
+                        <button>驳回</button>
+                    </div>
+                </div>
+                <div class="fangxiang">
+                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/专业切片 2.png" alt="">
+                    <span>方向: </span>
+                    <span></span>
+                    <div class="anniu">
+                        <button>同意</button>
+                        <button>驳回</button>
+                    </div>
+                </div>
+                <div class="huojiang">
+                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/获奖经历切片 9.png" alt="">
+                    <span>获奖经历:</span>
+                    <span></span>
+                    <div class="anniu">
+                        <button>同意</button>
+                        <button>驳回</button>
+                    </div>
+                </div>
+                <div class="zhiwei">
+                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/方向新切片 10.png" alt="">
+                    <span></span>
+                    <span></span>
+                    <div class="anniu">
+                        <button>同意</button>
+                        <button>驳回</button>
+                    </div>
+                </div>
+            </div>
+            <div class="showReview"></div>
         </div>
         <div class="photo">
             <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统">
             <span class="student">学生管理系统</span>
         </div>
-        <div class="changeAcc">
-            <button id="exitAcc">退出登录</button>
-            <button id="exitSys">查看审核</button>
-        </div>
     </div>
 
     <script>
-        var showXjEl=document.querySelector("#showXj")
-        showXjEl.onclick = function(){
-            location.href="/wjy/修改学生信息(unfinished).html"
+        var showXjEl = document.querySelector("#showXj")
+        showXjEl.onclick = function () {
+            location.href = "/wjy/修改学生信息(unfinished).html"
         }
         var showFbEl = document.querySelector("#showFb")
-            showFbEl.onclick = function () {
-                location.href = "/jyq/管理端发布界面/管理端发布界面.html"
-            }
+        showFbEl.onclick = function () {
+            location.href = "/jyq/管理端发布界面/管理端发布界面.html"
+        }
         var picEl = document.querySelector(".pic")
-            picEl.onclick = function () {
-                alert("现在已经是管理端初始页面了，不要重复点击")
-            }
-        var exitAccEl = document.querySelector("#exitAcc")
-            var exitSysEl = document.querySelector("#exitSys")
-            exitAccEl.onclick = function () {
-                alert('您已退出账号，即将返回登陆首页面');
-                location.href = "/jyq/登录界面-again/登录界面.html"
-            }
-            exitSysEl.onclick = function () {
-                
-            }
+        picEl.onclick = function () {
+            location.href = "/qht/管理登录展示页面.html"
+        }
+
     </script>
 </body>
 

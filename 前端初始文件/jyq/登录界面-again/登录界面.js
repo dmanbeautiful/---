@@ -27,12 +27,61 @@ window.onload = function(){
             yz();
             //alert('请十分钟后再试');
     });
+    
+var input = document.getElementsByTagName('input');
+input[0].onclick = function (){
+    var yh = document.getElementById('yh');
+    yh.style.top  = '0';
+    yh.style.transition = 'top 0.8s';
+    yh.style.color = 'black';
+    }
+input[1].onclick = function (){
+    var mm = document.getElementById('mm');
+    mm.style.top  = '0';
+    mm.style.transition =  'top 0.8s';
+    mm.style.color = 'black';
+    }
+ input[0].onblur = function () {
+        var yh = document.getElementById('yh');
+        yh.style.top=""
+        yh.style.bottom  = '0';
+        yh.style.color = 'gray';
+    }
+input[1].onblur = function () {
+        var mm = document.getElementById('mm');
+        mm.style.top  = "";
+        mm.style.bottom = '0'
+        mm.style.color = 'gray';
+        }
 
+    input[0].oninput = function () {  
+    if (this.value) {    
+        this.onblur = null;  
+    } else {    
+        this.onblur = function () {  
+        yh.style.top = "";  
+        yh.style.bottom = '0';  
+        yh.style.color = 'gray';  
+        }  
+    }  
+}  
+input[1].oninput = function () {  
+    if (this.value) {   
+        this.onblur = null;  
+    } else {  
+        this.onblur = function () {  
+        mm.style.top = "";  
+        mm.style.bottom = '0';  
+        mm.style.color = 'gray';  
+        }  
+    }  
+}
     function yz() {
         if (n < 2) {
             var inputCode = document.getElementById('yzm-input').value;
             var currentCode = number.innerHTML;
             if (inputCode === currentCode.trim()) {
+                //使用已经获取好的两个输入框内value向后端发送
                 window.open("/qht/展示信息.html");
                 clearLock();
             }else if(!inputCode){
@@ -48,31 +97,6 @@ window.onload = function(){
     }
 }
 
-var input = document.getElementsByTagName('input');
-input[0].onclick = function (){
-    var yh = document.getElementById('yh');
-    yh.style.top  = '0';
-    yh.style.transition = 'top 0.8s';
-    yh.style.color = 'black';
-    }
-input[0].onblur = function () {
-    var yh = document.getElementById('yh');
-    yh.style.top=""
-    yh.style.bottom  = '0';
-    yh.style.color = 'gray';
-}
-input[1].onclick = function (){
-    var mm = document.getElementById('mm');
-    mm.style.top  = '0';
-    mm.style.transition =  'top 0.8s';
-    mm.style.color = 'black';
-    }
-    input[1].onblur = function () {
-    var mm = document.getElementById('mm');
-    mm.style.top  = "";
-    mm.style.bottom = '0'
-    mm.style.color = 'gray';
-}
 })
 
 let lockTimeout = null;

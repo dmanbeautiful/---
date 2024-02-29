@@ -69,21 +69,23 @@
             font-weight: 700;
             font-size: 30px;
         }
+
         .submit {
             position: absolute;
             top: 680px;
         }
+
         .btn {
             width: 80px;
             height: 30px;
             border-radius: 15px;
             font-size: 15px;
         }
-        .btn:hover{
+
+        .btn:hover {
             color: white;
             background-color: green;
         }
-
     </style>
 </head>
 
@@ -108,14 +110,14 @@
             <input type="text" class="information">
             <span class="innerWords">从属方向</span>
             <select class="informationSpecial">
-                <option value="full">全栈</option>
-                <option value="java">Java</option>
-                <option value="shuKe">数据科学</option>
-                <option value="cpu">CPU&OS</option>
-                <option value="design">设计</option>
-                <option value="secretary">秘书处</option>
+                <option value="全栈">全栈</option>
+                <option value="Java">Java</option>
+                <option value="数据科学">数据科学</option>
+                <option value="CPU&OS">CPU&OS</option>
+                <option value="设计">设计</option>
+                <option value="秘书处">秘书处</option>
             </select>
-            <span class="innerWords" >获奖经历</span>
+            <span class="innerWords">获奖经历</span>
             <textarea class="information" placeholder="请输入内容" rows="4" cols="50"></textarea>
             <span class="innerWords">职位</span>
             <input type="textarea" class="information">
@@ -123,7 +125,7 @@
             <input type="text" class="information">
             <span class="innerWords">密保信息1</span>
             <input type="text" class="information">
-            <span class="innerWords">密保信息1</span>
+            <span class="innerWords">密保信息2</span>
             <input type="text" class="information">
         </div>
         <div class="photo">
@@ -137,7 +139,13 @@
 
     <script>
         var btnEl = document.querySelector(".btn")
-        btnEl.onclick =function(){
+        btnEl.onclick = function () {
+            var informationELs = document.querySelectorAll(".information")
+            for(let i =0;i<8;i++){
+                console.log(informationELs[i].value);
+            }
+            var informationSpecialEl =document.querySelector(".informationSpecial")
+            console.log(informationSpecialEl.value);
             location.href="./学生信息的中转站.html"
         }
     </script>
