@@ -193,6 +193,9 @@
             position: relative;
             top: -25px;
         }
+        #demo{
+            position: absolute;
+        }
     </style>
 </head>
 
@@ -250,7 +253,7 @@
                 </div>
                 <div class="zhiwei">
                     <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/方向新切片 10.png" alt="">
-                    <span></span>
+                    <span>职位:</span>
                     <span></span>
                     <div class="anniu">
                         <button>同意</button>
@@ -258,15 +261,59 @@
                     </div>
                 </div>
             </div>
-            <div class="showReview"></div>
+            <div class="showReview">
+                <span class="stuChangeNam">学生姓名:</span>
+                <span>需要修改的信息:</span>
+                <div class="shuyuan">
+                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/学院切片 4.png" alt="">
+                    <span>书院:</span>
+                    <span></span>
+                    <div class="anniu">
+                        <button>同意</button>
+                        <button>驳回</button>
+                    </div>
+                </div>
+                <div class="fangxiang">
+                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/专业切片 2.png" alt="">
+                    <span>方向: </span>
+                    <span></span>
+                    <div class="anniu">
+                        <button>同意</button>
+                        <button>驳回</button>
+                    </div>
+                </div>
+                <div class="huojiang">
+                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/获奖经历切片 9.png" alt="">
+                    <span>获奖经历:</span>
+                    <span></span>
+                    <div class="anniu">
+                        <button>同意</button>
+                        <button>驳回</button>
+                    </div>
+                </div>
+                <div class="zhiwei">
+                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/方向新切片 10.png" alt="">
+                    <span>职位:</span>
+                    <span></span>
+                    <div class="anniu">
+                        <button>同意</button>
+                        <button>驳回</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="photo">
             <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统">
             <span class="student">学生管理系统</span>
         </div>
+        <button id="demo">测试</button>
     </div>
 
     <script>
+        var demoEl = document.querySelector("#demo")
+        demoEl.onclick=function(){
+            localStorage.setItem("demo","token")
+        }
         var showXjEl = document.querySelector("#showXj")
         showXjEl.onclick = function () {
             location.href = "/wjy/修改学生信息(unfinished).html"
