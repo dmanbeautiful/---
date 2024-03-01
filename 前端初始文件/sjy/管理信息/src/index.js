@@ -1,13 +1,8 @@
 //创建数组，目标是根据数组数据个数动态生成按钮，将数组的值赋给响应标签
 var objArray = [
-    { name: "李四", number: "123456", direction: "全栈" },
-    { name: "张三", number: "234567", direction: "全栈" },
-    { name: "张三", number: "232567", direction: "全栈" },
-    { name: "张三", number: "237567", direction: "全栈" },
-    { name: "张三", number: "238567", direction: "全栈" },
-    { name: "张三", number: "231567", direction: "全栈" },
-    { name: "张三", number: "2387567", direction: "全栈" },
-    { name: "张三", number: "234597", direction: "全栈" },
+    { name: "张三", number: "123456", direction: "全栈" },
+    { name: "李四", number: "234567", direction: "全栈" },
+    
 ];
 
 //设置每页的元素个数，perPage可以用var设置为全局变量
@@ -41,7 +36,7 @@ function renderList(currentPage) {
         divStudentMessage.className = "studentMessage";
         
         let img = document.createElement('img');
-        img.src = `ai-image@3x.png`;
+        img.src ="https://sunjiayu19.oss-cn-beijing.aliyuncs.com/ai-image@3x.png";
         img.className = "portrait";
 
         let spanMessage= document.createElement('span');
@@ -67,17 +62,20 @@ function renderList(currentPage) {
         
         let spanButton= document.createElement('span');
         spanButton.className = "button";
-        let spanReset= document.createElement('span');
-        spanReset.className = "buttonReset";
-        let spanAlter= document.createElement('span');
-        spanAlter.className = "buttonAlter";
-        let spanDelete= document.createElement('span');
-        spanDelete.className = "buttonDelete";
+        let Reset= document.createElement('a');
+        Reset.className = "buttonReset";
+        Reset.innerHTML = "重置";
+        let Alter= document.createElement('a');
+        Alter.className = "buttonAlter";
+        Alter.innerHTML = "修改";
+        let Delete= document.createElement('a');
+        Delete.className = "buttonDelete";
+        Delete.innerHTML = "删除";
 
         //利用appendChild向span2中添加子节点，一次只能添加一个
-        spanButton.appendChild(spanReset);
-        spanButton.appendChild(spanAlter);
-        spanButton.appendChild(spanDelete);
+        spanButton.appendChild(Reset);
+        spanButton.appendChild(Alter);
+        spanButton.appendChild(Delete);
 
         //利用appendChild向div2中添加子节点,div2就是集合所有内容的节点
         divStudentMessage.appendChild(img);
@@ -85,7 +83,6 @@ function renderList(currentPage) {
         divStudentMessage.appendChild(spanButton);
             
         //以上，节点模板书写完成
-
         list.appendChild(divStudentMessage);
     }
 }

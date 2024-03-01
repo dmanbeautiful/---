@@ -63,6 +63,7 @@
     width: 200px;
     height: 36px;
     background-color:white;
+    border:none;
     border-radius: 18px;
     position: absolute;
     right:350px;
@@ -87,13 +88,12 @@
 .studentList{
     width: 752px;
     height: 500px;
-    /* background-color: pink; */
-    /* margin-top:20px; */
     margin-left: 80px;
+    margin-top:20px;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 .studentMessage{
     flex:1;
@@ -246,4 +246,21 @@
 
 #pic:hover {
     background-color: #fff;
+}
+.pagination{
+    width: 400px;
+    height: 40px;
+    background-color: white;
+    border:2px solid black;
+    margin-top:20px;
+    display: flex;
+}
+button{
+    flex:1;
+    background-color: white;
+    border:none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
 }
