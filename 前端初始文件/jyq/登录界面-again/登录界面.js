@@ -18,15 +18,29 @@ window.onload = function(){
     change.addEventListener('click', function(){
         newCode = getCode();
         number.innerHTML = newCode; 
-        
     })
     
     var n = 0;
-
+    const isFlag = false;
     button.addEventListener('click', function() {
+        var nameShowEl = document.querySelector(".nameShow")
+        var passShowEl = document.querySelector(".passShow")
             yz();
-            //alert('请十分钟后再试');
-    });
+            axios.post("http://1ba6198a.r3.cpolar.top/admin/Login", {
+                admAcc: nameShowEl.value,
+                admPassword: passShowEl.value
+            })
+                .then(function (response) {
+                    // if(response.data.code = 'ok'){
+                    //     let isFlag = true;
+                    //     window.localStorage.setItem('Authorization',response.data.token)
+                    // }
+                    console.log(response.data.code);
+                })
+                .catch(function (erro) {
+                    console.log(erro);
+                });
+        });
     
 var input = document.getElementsByTagName('input');
 input[0].onclick = function (){
@@ -82,7 +96,10 @@ input[1].oninput = function () {
             var currentCode = number.innerHTML;
             if (inputCode === currentCode.trim()) {
                 //使用已经获取好的两个输入框内value向后端发送
-                window.open("/qht/展示信息.html");
+                if(isFlag){
+                    window.open("/qht/展示信息.html");
+                }
+
                 clearLock();
             }else if(!inputCode){
                 alert('请输入验证码')
@@ -115,4 +132,3 @@ function clearLock() {
         document.querySelector(".nameShow").disabled = false;
     }  
 }
-
