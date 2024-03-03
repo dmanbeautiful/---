@@ -182,15 +182,20 @@
             <button id="exitSys">查看审核</button>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
+         const instance = axios.create({
+        headers:{
+            'Authorization':window.localStorage.getItem('Authorization')
+        }
+    });
         var showXjEl=document.querySelector("#showXj")
         showXjEl.onclick = function(){
             location.href="/wjy/修改学生信息(unfinished).html"
         }
         var showFbEl = document.querySelector("#showFb")
             showFbEl.onclick = function () {
-                location.href = "/jyq/管理端发布界面/管理端发布界面.html"
+                location.href = "/前端初始文件/jyq/管理端发布界面/管理端发布界面.html"
             }
         var picEl = document.querySelector(".pic")
             picEl.onclick = function () {

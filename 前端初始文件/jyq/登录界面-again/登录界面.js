@@ -25,17 +25,17 @@ window.onload = function(){
     button.addEventListener('click', function() {
         var nameShowEl = document.querySelector(".nameShow")
         var passShowEl = document.querySelector(".passShow")
-            yz();
             axios.post("http://1ba6198a.r3.cpolar.top/admin/Login", {
                 admAcc: nameShowEl.value,
                 admPassword: passShowEl.value
             })
                 .then(function (response) {
-                    // if(response.data.code = 'ok'){
-                    //     let isFlag = true;
-                    //     window.localStorage.setItem('Authorization',response.data.token)
-                    // }
-                    console.log(response.data.code);
+                    if(response.data.code = 'ok'){
+                        isFlag = true;
+                        window.localStorage.setItem('Authorization',response.data.token);
+                        yz();
+                    }
+                    //console.log(response.data.code);
                 })
                 .catch(function (erro) {
                     console.log(erro);

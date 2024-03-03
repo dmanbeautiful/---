@@ -181,8 +181,29 @@
             <button id="exitLog">退出登录</button>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
+        const instance = axios.create({
+            headers:{
+                'Authorization':window.localStorage.getItem('Authorization')
+            }
+        });
+        instance.get("http://1ba6198a.r3.cpolar.top/admin/Login")
+        .then(function(response){
+            const realData = response.data
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+        var data = ['云','顶','书','院']
+        var spanoneEl = document.querySelectorAll(".basicShow span")
+        for(let i = 0;i < spanoneEl.length;i++){
+            spanoneEl[i].innerText = spanoneEl[i].innerText + data[i]
+        }
+        var spantwoEl = document.querySelectorAll(".schoolShow span")
+        for(let i = 0;i < spantwoEl.length;i++){
+            spantwoEl[i].innerText = spantwoEl[i].innerText + data[i]
+        }
         var infoEl = document.querySelector("#changeInfo");
         var passEl = document.querySelector("#changePass");
         var exitEl = document.querySelector("#exitLog");

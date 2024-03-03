@@ -94,22 +94,22 @@
         <span class="words">个人信息</span>
         <div class="import">
             <span class="innerWords">姓名</span>
-            <input type="text" class="information">
+            <input type="text" class="information" id="stuName">
             <span class="innerWords">年龄</span>
-            <input type="text" class="information">
+            <input type="text" class="information" id="stuAge">
             <span class="innerWords">性别</span>
             <div class="gender">
                 <label>
-                    <input type="radio" name="gender" value="male"> 男
+                    <input type="radio" name="stuSex" value="male"> 男
                 </label>
                 <label>
-                    <input type="radio" name="gender" value="female"> 女
+                    <input type="radio" name="stuSex" value="female"> 女
                 </label>
             </div>
             <span class="innerWords">从属学院</span>
-            <input type="text" class="information">
+            <input type="text" class="information" id="stuAlterCollege">
             <span class="innerWords">从属方向</span>
-            <select class="informationSpecial">
+            <select class="informationSpecial" id="stuAlterDirection">
                 <option value="全栈">全栈</option>
                 <option value="Java">Java</option>
                 <option value="数据科学">数据科学</option>
@@ -118,15 +118,15 @@
                 <option value="秘书处">秘书处</option>
             </select>
             <span class="innerWords">获奖经历</span>
-            <textarea class="information" placeholder="请输入内容" rows="4" cols="50"></textarea>
+            <textarea class="information" placeholder="请输入内容" rows="4" cols="50" id="stuAlterAwards"></textarea>
             <span class="innerWords">职位</span>
-            <input type="textarea" class="information">
+            <input type="textarea" class="information" id="stuAlterJob">
             <span class="innerWords">学号</span>
-            <input type="text" class="information">
+            <input type="text" class="information" id="stuAlterAcc">
             <span class="innerWords">密保信息1</span>
-            <input type="text" class="information">
+            <input type="text" class="information" id="stuAnswer1">
             <span class="innerWords">密保信息2</span>
-            <input type="text" class="information">
+            <input type="text" class="information" id="stuAnswer2">
         </div>
         <div class="photo">
             <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统">
@@ -136,17 +136,25 @@
             <button class="btn">提交</button>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
+        const instance = axios.create({
+        headers:{
+            'Authorization':window.localStorage.getItem('Authorization')
+            }
+        });
+        //instance.post("http://1ba6198a.r3.cpolar.top/admin/Login")
         var btnEl = document.querySelector(".btn")
         btnEl.onclick = function () {
-            var informationELs = document.querySelectorAll(".information")
-            for(let i =0;i<8;i++){
-                console.log(informationELs[i].value);
-            }
-            var informationSpecialEl =document.querySelector(".informationSpecial")
-            console.log(informationSpecialEl.value);
-            location.href="./学生信息的中转站.html"
+            const formDataNeed = {
+            stuAlterCollege:document.getElementById("stuAlterCollege").value,
+            stuAlterDirection:document.getElementById("stuAlterDirection").value,
+            stuAlterAwards:document.getElementById("stuAlterAwards").value,
+            stuAlterJob:document.getElementById("stuAlterJob").value,
+            stuAlterAcc:document.getElementById("stuAlterAcc").value
+        }
+        console.log(formDataNeed);
+        //    location.href="./学生信息的中转站.html"
         }
         console.log(localStorage.getItem('demo'));
     </script>
