@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
         .box {
             height: 800px;
             width: 1200px;
@@ -100,12 +104,14 @@
         }
 
         .middleBox {
-            width: 1050px;
-            height: 350px;
+            width: 1030px;
+            height: 330px;
             background: rgba(255, 255, 255, 0.4);
             border-radius: 20px;
             display: flex;
             flex-direction: column;
+            padding-top: 20px;
+            padding-left: 20px;
         }
 
         .photo {
@@ -140,20 +146,24 @@
             margin-left: -60px;
             margin-top: 20px;
             width: 120px;
-            height: 30px;
-            border: 1px solid;
+            height: 40px;
             border-radius: 10px;
-            background-color: skyblue;
-            color: aliceblue;
+            border: none;
+            background-color: rgb(57, 129, 247);
+            color: white;
             cursor: pointer;
         }
 
         .btn:hover {
-            color: black;
-            background-color: red;
+            background-color: rgb(63, 115, 198);
         }
         #pic:hover{
             background-color: #fff;
+        }
+        input{
+            border: none;
+            height: 25px;
+            width: 1000px;
         }
     </style>
 </head>
@@ -193,26 +203,33 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
     <script>
         var btnEl = document.querySelector(".btn")
         btnEl.onclick = function () {
             var showAccEl = document.querySelector(".showAcc")
             var showStuEl = document.querySelector(".showStu")
-            axios.post("admin/stuRegister", {
+            instance.post("admin/stuRegister", {
                 stuAcc: showAccEl.value,
                 stuName: showStuEl.value
             })
                 .then(function (response) {
-                    console.log(response);
+                    if(response.data.code==='ok'){
+                        alert(response.data.msg)
+                        location.href="./管理登录展示页面.html"
+                    }
                 })
                 .catch(function (erro) {
                     console.log(erro);
                 });
-            location.href="./管理登录展示页面.html"
         }
         var picEl = document.querySelector(".pic")
             picEl.onclick = function () {
                 location.href = "/qht/管理登录展示页面.html"
+            }
+        var xx = document.querySelector('.xx')
+            xx.onclick = function () {
+                location.href = "../sjy/管理信息/src/ManageMessage.html"
             }
     </script>
 </body>

@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         .boxTop {
             height: 800px;
             width: 1200px;
@@ -52,11 +56,11 @@
 
         }
 
-        .pic {
+        .pic{
             position: relative;
             width: 80px;
             height: 80px;
-            margin-left: auto;
+            margin-left: auto; 
         }    
         .pic:hover{
             background-color: #fff;
@@ -123,12 +127,14 @@
         }
         var backInfoEl = document.querySelector("#backInfo")
         backInfoEl.onclick = function(){
-            alert('您已退出账号，即将返回登陆首页面')
-            location.href="/jyq/登录界面-again/登录界面.html"
+            var result = confirm('确定要退出登录吗？')
+            if(result){
+                location.replace("../jyq/登录界面-again/登录界面.html")
+            }
         }
         var picEl = document.querySelector(".pic")
             picEl.onclick = function () {
-                alert("您现在就是学生端初始页面，不要重复点击")
+                alert("您现在就是学生端初始页面，请不要重复点击")
             }
     </script>
 </body>

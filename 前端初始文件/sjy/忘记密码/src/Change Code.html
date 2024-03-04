@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>忘记密码</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="title">云顶学子</div>
+        <div class="table"> 
+            <div class="changeCode">忘记密码</div>
+            <!--创建表单-->
+            <div class="forms">
+                <div class="form">
+                    <span class="formText">密保信息1</span>
+                    <input type="text" class="input" id="firstInfo">
+                </div>
+                <div class="form">
+                    <span class="formText">密保信息2</span>
+                    <input type="text" class="input" id="secondInfo">
+                </div>
+                <div class="form">
+                    <span class="formText">账号</span>
+                    <input type="text" class="input" id="newCode">
+                </div>
+                <div class="form">
+                    <span class="formText">账号</span>
+                    <input type="text" class="input" id="newName">
+                </div>
+            </div>
+            <div class="button">确认</div>
+        </div>
+        <!--添加底部图片-->
+        <div class="photo">
+            <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png">
+            <div class="student">学生管理系统</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
+    <script>
+        var btnEl = document.querySelector(".button")
+        btnEl.onclick=function(){
+            var firstInfoEl=document.getElementById("firstInfo")
+            var secondInfoEl =document.getElementById('secondInfo')
+            var newCodeEl = document.getElementById('newCode')
+            var newNameEl = document.getElementById('newName')
+            instance.post('/student/passwordForget',{
+                stuName:newNameEl.value,
+                stuAcc:newCodeEl.value,
+                
+            })
+            location.href="/qht/展示信息.html"
+        }
+    </script>
+</body>
+</html>

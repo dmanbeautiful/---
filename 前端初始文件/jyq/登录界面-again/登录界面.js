@@ -7,6 +7,7 @@ function getCode(){
     }
     return str;
 }
+var checkFlag = 'adm'
 document.addEventListener('DOMContentLoaded',function () {
 window.onload = function(){
     var number = document.getElementById('number');
@@ -19,13 +20,27 @@ window.onload = function(){
         newCode = getCode();
         number.innerHTML = newCode; 
     })
-    
+
+var stuLogEl =document.querySelector(".stuLog")
+var admLogEl =document.querySelector(".admLog")
+stuLogEl.addEventListener('click', function() {  
+    admLogEl.classList.remove('active');
+    checkFlag = 'stu';
+    this.classList.add('active');  
+});  
+  
+admLogEl.addEventListener('click', function() {    
+    stuLogEl.classList.remove('active');  
+    checkFlag = 'adm';
+    this.classList.add('active');  
+});
     var n = 0;
-    const isFlag = false;
+    var isFlag = false;
     button.addEventListener('click', function() {
         var nameShowEl = document.querySelector(".nameShow")
         var passShowEl = document.querySelector(".passShow")
-            axios.post("http://1ba6198a.r3.cpolar.top/admin/Login", {
+        if(checkFlag==='adm'){
+            instance.post("/admin/Login", {
                 admAcc: nameShowEl.value,
                 admPassword: passShowEl.value
             })
@@ -35,11 +50,26 @@ window.onload = function(){
                         window.localStorage.setItem('Authorization',response.data.token);
                         yz();
                     }
-                    //console.log(response.data.code);
                 })
                 .catch(function (erro) {
                     console.log(erro);
                 });
+        }else{
+            axios.post("/student/Login", {
+                admAcc: nameShowEl.value,
+                admPassword: passShowEl.value
+            })
+                .then(function (response) {
+                    if(response.data.code = 'ok'){
+                        isFlag = true;
+                        window.localStorage.setItem('Authorization',response.data.token);
+                        yz();
+                    }
+                })
+                .catch(function (erro) {
+                    console.log(erro);
+                });
+        }
         });
     
 var input = document.getElementsByTagName('input');
@@ -97,7 +127,7 @@ input[1].oninput = function () {
             if (inputCode === currentCode.trim()) {
                 //使用已经获取好的两个输入框内value向后端发送
                 if(isFlag){
-                    window.open("/qht/展示信息.html");
+                    window.open("/Combat-projects/前端初始文件/qht/管理登录展示页面.html");
                 }
 
                 clearLock();

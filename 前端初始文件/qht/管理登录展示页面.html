@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
         .box {
             height: 800px;
             width: 1200px;
@@ -97,7 +101,7 @@
 
         .pic {
             position: relative;
-            width: 10px;
+            width: 80px;
             height: 80px;
             margin-left: auto;
         }
@@ -138,14 +142,15 @@
             margin-left: 30px;
             width: 80px;
             height: 45px;
-            border-radius: 22px;
-            background-color: white;
+            border: none;
+            border-radius: 15px;
+            background-color: rgb(57, 129, 247);
             font-weight: 700;
+            color: black;
         }
         .changeAcc button:hover {
-            background-color: rgba(57, 129, 247);
-            color: #f1f1f1;
-            font-weight: 700;
+            background-color: rgb(63, 115, 198);
+            color: white;
         }
     </style>
 </head>
@@ -182,33 +187,30 @@
             <button id="exitSys">查看审核</button>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script>
-         const instance = axios.create({
-        headers:{
-            'Authorization':window.localStorage.getItem('Authorization')
-        }
-    });
         var showXjEl=document.querySelector("#showXj")
         showXjEl.onclick = function(){
-            location.href="/wjy/修改学生信息(unfinished).html"
+            location.href="../sjy/管理信息/src/ManageMessage.html"
         }
         var showFbEl = document.querySelector("#showFb")
             showFbEl.onclick = function () {
-                location.href = "/前端初始文件/jyq/管理端发布界面/管理端发布界面.html"
+                location.href = "/jyq/管理端发布界面/管理端发布界面.html"
             }
         var picEl = document.querySelector(".pic")
             picEl.onclick = function () {
-                alert("现在已经是管理端初始页面了，不要重复点击")
+                alert("现在已经是管理端初始页面了，请不要重复点击")
             }
         var exitAccEl = document.querySelector("#exitAcc")
             var exitSysEl = document.querySelector("#exitSys")
             exitAccEl.onclick = function () {
-                alert('您已退出账号，即将返回登陆首页面');
-                location.href = "/jyq/登录界面-again/登录界面.html"
+                var result = confirm("确定要退出登录吗？");
+                    if (result == true) {
+                        location.replace("../jyq/登录界面-again/登录界面.html");
+                    }
             }
             exitSysEl.onclick = function () {
-                
+                location.href = './审核信息.html'
             }
     </script>
 </body>

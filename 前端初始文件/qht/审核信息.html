@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
         .box {
             height: 800px;
             width: 1200px;
@@ -133,6 +137,7 @@
             border-radius: 22px;
             background-color: white;
             font-weight: 700;
+            border: none;
         }
 
         .changeAcc button:hover {
@@ -151,19 +156,24 @@
         }
 
         .showReview {
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             margin: 10px 0;
             width: 900px;
-            height: 245px;
-            border: 2px solid darksalmon;
+            height: 250px;
+            background-color: rgba(255, 255, 255, 0.4);
+            padding-top:5px;
+            padding-bottom: 5px;
+            border-radius: 20px;
         }
 
         .showReview div {
+            position: relative;
+            left: 25px;
             width: 800px;
             height: 30px;
-            /* background-color: black; */
         }
 
         .anniu button {
@@ -173,13 +183,14 @@
             height: 30px;
             width: 50px;
             border-radius: 20px;
-            border: 1px solid;
+            border: none;
+            color: white;
+            background-color: rgba(57, 129, 247);
         }
 
         .showReview div button:hover {
             cursor: pointer;
-            color: orange;
-            background-color: darkslategray;
+            background-color: rgb(63, 115, 198);
         }
 
         .showReview img {
@@ -196,7 +207,15 @@
         #demo{
             position: absolute;
         }
+        #bh{
+            background-color: white;
+            color: black;
+        }
+        #bh:hover{
+            background-color: #f9f9f9;
+        }
     </style>
+
 </head>
 
 
@@ -222,15 +241,14 @@
         <!-- 书院，方向，获奖，职位 -->
         <div class="reviewInfo">
             <div class="showReview">
-                <span class="stuChangeNam">学生姓名:</span>
-                <span>需要修改的信息:</span>
+                <span class="stuChangeNam" style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学生姓名:</span>
                 <div class="shuyuan">
                     <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/学院切片 4.png" alt="">
                     <span>书院:</span>
                     <span></span>
                     <div class="anniu">
                         <button>同意</button>
-                        <button>驳回</button>
+                        <button id="bh">驳回</button>
                     </div>
                 </div>
                 <div class="fangxiang">
@@ -239,7 +257,7 @@
                     <span></span>
                     <div class="anniu">
                         <button>同意</button>
-                        <button>驳回</button>
+                        <button id="bh">驳回</button>
                     </div>
                 </div>
                 <div class="huojiang">
@@ -248,7 +266,7 @@
                     <span></span>
                     <div class="anniu">
                         <button>同意</button>
-                        <button>驳回</button>
+                        <button id="bh">驳回</button>
                     </div>
                 </div>
                 <div class="zhiwei">
@@ -257,20 +275,19 @@
                     <span></span>
                     <div class="anniu">
                         <button>同意</button>
-                        <button>驳回</button>
+                        <button id="bh">驳回</button>
                     </div>
                 </div>
             </div>
             <div class="showReview">
-                <span class="stuChangeNam">学生姓名:</span>
-                <span>需要修改的信息:</span>
+                <span class="stuChangeNam" style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学生姓名:</span>
                 <div class="shuyuan">
                     <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/学院切片 4.png" alt="">
                     <span>书院:</span>
                     <span></span>
                     <div class="anniu">
                         <button>同意</button>
-                        <button>驳回</button>
+                        <button id="bh">驳回</button>
                     </div>
                 </div>
                 <div class="fangxiang">
@@ -279,7 +296,7 @@
                     <span></span>
                     <div class="anniu">
                         <button>同意</button>
-                        <button>驳回</button>
+                        <button id="bh">驳回</button>
                     </div>
                 </div>
                 <div class="huojiang">
@@ -288,7 +305,7 @@
                     <span></span>
                     <div class="anniu">
                         <button>同意</button>
-                        <button>驳回</button>
+                        <button id="bh">驳回</button>
                     </div>
                 </div>
                 <div class="zhiwei">
@@ -297,7 +314,7 @@
                     <span></span>
                     <div class="anniu">
                         <button>同意</button>
-                        <button>驳回</button>
+                        <button id="bh">驳回</button>
                     </div>
                 </div>
             </div>
@@ -305,26 +322,23 @@
         <div class="photo">
             <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统">
             <span class="student">学生管理系统</span>
-        </div>
-        <button id="demo">测试</button>
-    </div>
 
     <script>
-        var demoEl = document.querySelector("#demo")
-        demoEl.onclick=function(){
-            localStorage.setItem("demo","token")
-        }
+        //var demoEl = document.querySelector("#demo")
+        //demoEl.onclick=function(){
+        //    localStorage.setItem("demo","token")
+        //}
         var showXjEl = document.querySelector("#showXj")
         showXjEl.onclick = function () {
-            location.href = "/wjy/修改学生信息(unfinished).html"
+            location.href = "../sjy/管理信息/src/ManageMessage.html"
         }
         var showFbEl = document.querySelector("#showFb")
         showFbEl.onclick = function () {
-            location.href = "/jyq/管理端发布界面/管理端发布界面.html"
+            location.href = "../jyq/管理端发布界面/管理端发布界面.html"
         }
         var picEl = document.querySelector(".pic")
         picEl.onclick = function () {
-            location.href = "/qht/管理登录展示页面.html"
+            location.href = "./管理登录展示页面.html"
         }
 
     </script>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <title>管理端发布界面</title>
@@ -17,8 +16,8 @@
                 <div class="fb box1" id="showFb">发布</div>
                 <div class="xj box1">新建
                     <div class="dropdown-content">
-                        <a href="/qht/学生注册.html">学生端</a>
-                        <a href="/qht/管理注册.html">管理端</a>
+                        <a href="../../qht/学生注册.html">学生端</a>
+                        <a href="../../qht/管理注册.html">管理端</a>
                     </div>
                 </div>
                 <div class="pic">
@@ -51,6 +50,11 @@
                         <select id="search">
                             <option>设计</option>
                             <option>开发</option>
+                                <optgroup label="开发">
+                                    <option>JAVA</option>
+                                    <option>全栈</option>
+                                    <option>数据科学</option>
+                                </optgroup>
                             <option>秘书处</option>
                         </select>
                     </div>
@@ -64,25 +68,36 @@
 
     <script>
         var btnEl = document.querySelector(".btn")
-        btnEl.onclick = function () {
-            location.href = "/qht/管理登录展示页面.html"
-        }
+        btnEl.addEventListener('click', function () {
+            var text1 = document.getElementsByTagName('textarea')
+            var name = document.getElementById('search_stu')
+            if(name.value !== ''){
+                if(text1[0].value !== '' && text1[0].value !== ' '){
+                    alert('发送成功！')
+                }else{
+                    alert('请输入内容')
+                }
+            }else{
+                alert('请输入姓名')
+            }
+        })
         var btnTwoEl = document.querySelector(".btnTwo")
-        btnTwoEl.onclick = function () {
-            location.href = "/qht/管理登录展示页面.html"
-        }
+        btnTwoEl.addEventListener('click', function () {
+            var text1 = document.getElementsByTagName('textarea')
+            if(text1[1].value !== '' && text1[1].value !== ' '){
+                alert('发送成功！')
+            }else{
+                alert('请输入内容')
+            }
+        })
 
         var showXjEl = document.querySelector("#showXj")
         showXjEl.onclick = function () {
-            location.href = "/wjy/修改学生信息(unfinished).html"
-        }
-        var showFbEl = document.querySelector("#showFb")
-        showFbEl.onclick = function () {
-            location.href = "/jyq/管理端发布界面/管理端发布界面.html"
+            location.href = "../../sjy/管理信息/src/ManageMessage.html"
         }
         var picEl = document.querySelector(".pic")
         picEl.onclick = function () {
-            location.href = "/qht/管理登录展示页面.html"
+            location.href = "../../qht/管理登录展示页面.html"
         }
     </script>
 </body>

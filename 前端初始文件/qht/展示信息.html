@@ -182,13 +182,9 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
     <script>
-        const instance = axios.create({
-            headers:{
-                'Authorization':window.localStorage.getItem('Authorization')
-            }
-        });
-        instance.get("http://1ba6198a.r3.cpolar.top/admin/Login")
+        instance.get("studengt/info")
         .then(function(response){
             const realData = response.data
         })

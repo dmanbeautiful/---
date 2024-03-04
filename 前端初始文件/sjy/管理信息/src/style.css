@@ -1,16 +1,27 @@
-*{
-    margin:0;
-    padding:0;
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.backGround {
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(210, 230, 255, 1), rgba(255, 0, 0, 0));
+    background-repeat: no-repeat;
+    height: 770px;
+    width: 1125px;
+    left: 50%;
+    margin-left: -600px;
+    padding-top: 30px;
+    padding-left: 75px;
 }
 
 .box {
     position: relative;
-    width: 1050px;
-    height: 1050px;
+    width: 1100px;
+    height: 600px;
     left: 50%;
-    margin-left: -525px;
-    top: 30px;
-    background-image: linear-gradient(to bottom, rgba(210, 230, 255, 1), rgba(255, 0, 0, 0));
+    margin-left: -550px;
+    top: 100px;
 }
 
 .head {
@@ -46,104 +57,125 @@
     margin-left: auto;
 }
 
-.column{
-    width: 1050px;
+.column {
+    top: 20px;
+    width: 950px;
     height: 36px;
+    padding-left: 100px;
     position: relative;
     display: inline-block;
 }
-.columnText{
+
+.columnText {
     width: 120px;
     height: 36px;
-    font-size:20px;
+    font-size: 20px;
     font-weight: 700;
-    margin-left:80px;
+    margin-left: 80px;
 }
-.scanFrame{
+
+.scanFrame {
     width: 200px;
     height: 36px;
-    background-color:white;
+    border: none;
+    outline: none;
+    background-color: white;
     border-radius: 18px;
     position: absolute;
-    right:350px;
+    right: 250px;
 }
-.scanBackground{
+
+.scanBackground {
     width: 36px;
     height: 36px;
     background-color: rgb(57, 129, 247);
     border-radius: 50%;
     position: absolute;
-    right:300px;
-    top:0px;
+    right: 200px;
+    top: 0px;
 }
-.scanImage{
+.scanBackground:hover{
+    background-color: rgb(63, 115, 198)
+    ;
+}
+
+.scanImage {
     position: absolute;
-    width:20px;
+    width: 20px;
     height: 20px;
     display: inline-block;
-    top:5px;
-    left:5px;
+    top: 8px;
+    left: 8px;
 }
-.studentList{
-    width: 752px;
-    height: 500px;
-    /* background-color: pink; */
-    /* margin-top:20px; */
-    margin-left: 80px;
+
+.studentList {
+    width: 500px;
+    height: 480px;
+    margin-top: 20px;
+    margin-left: 152px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    top: 20px;
 }
-.studentMessage{
-    flex:1;
+
+.studentMessage {
+    flex: 1;
     /* background-color:pink; */
-    border-top:1px solid;
+    border-top: 1px solid;
     border-bottom: 1px solid;
     border-color: rgba(255, 255, 255, 0.5);
 }
-.portrait{
+
+.portrait {
     width: 32px;
     height: 32px;
     border-radius: 50%;
     position: absolute;
-    margin-left:20px;
+    margin-left: 20px;
     margin-top: 20px;
 }
-.message{
-   width: 112px;
-   height: 60px;
-   position: absolute;
-   margin-left:250px;
-   margin-top: 10px;
-   /* background-color: salmon; */
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   /*设置内部子盒子文字样式*/
-   align-items: center;
+
+.message {
+    width: 112px;
+    height: 60px;
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 10px;
+    /* background-color: salmon; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*设置内部子盒子文字样式*/
+    align-items: center;
 }
-.name{
+
+.name {
     font-weight: 700;
     /* background-color: khaki; */
 }
-.number{
+
+.number {
     /* background-color: wheat; */
 }
-.direction{
+
+.direction {
     /* background-color: yellowgreen; */
 }
-.button{
+
+.button {
     width: 200px;
     height: 32px;
     position: absolute;
     margin-left: 500px;
-    margin-top:25px;
+    margin-top: 25px;
     /* display: flex;
     flex-direction: row;
     justify-content: center; */
 }
-.buttonReset{
+
+.buttonReset {
     width: 52px;
     height: 32px;
     position: absolute;
@@ -152,19 +184,30 @@
     text-align: center;
     font-weight: 600;
     background-color: rgb(57, 129, 247);
+    color: black;
 }
-.buttonAlter{
+.buttonReset:hover{
+    background-color: rgb(63, 115, 198);
+    color: white;
+}
+
+.buttonAlter {
     width: 52px;
     height: 32px;
     position: absolute;
-    margin:0 75px;
+    margin: 0 75px;
     border-radius: 5px;
     line-height: 32px;
     text-align: center;
     font-weight: 600;
-    background-color:rgb(57, 129, 247);
+    background-color: rgb(57, 129, 247);
 }
-.buttonDelete{
+.buttonAlter:hover{
+    background-color: rgb(63, 115, 198);
+    color: white;
+}
+
+.buttonDelete {
     width: 52px;
     height: 32px;
     position: absolute;
@@ -175,13 +218,18 @@
     font-weight: 600;
     background: rgba(212, 48, 48, 1);
 }
-.pagination{
+.buttonDelete:hover{
+    color: white;
+}
+
+.pagination {
     width: 400px;
     height: 200px;
     /* background-color: pink; */
     position: absolute;
     margin-left: 300px;
 }
+
 .back {
     position: absolute;
     top: 380px;
@@ -198,7 +246,6 @@
 .btn:hover {
     background-color: #fff;
     color: red;
-    ;
 }
 
 .box1:hover {
@@ -246,4 +293,24 @@
 
 #pic:hover {
     background-color: #fff;
+}
+.pagination {
+    width: 400px;
+    height: 35px;
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 50px;
+    display: flex;
+
+}
+
+button {
+    flex: 1;
+    background-color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+
 }

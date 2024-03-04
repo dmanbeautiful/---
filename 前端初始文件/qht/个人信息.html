@@ -100,10 +100,10 @@
             <span class="innerWords">性别</span>
             <div class="gender">
                 <label>
-                    <input type="radio" name="stuSex" value="male"> 男
+                    <input type="radio" name="stuSex" value="male" class="stuSex"> 男
                 </label>
                 <label>
-                    <input type="radio" name="stuSex" value="female"> 女
+                    <input type="radio" name="stuSex" value="female" class="stuSex"> 女
                 </label>
             </div>
             <span class="innerWords">从属学院</span>
@@ -137,12 +137,8 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
     <script>
-        const instance = axios.create({
-        headers:{
-            'Authorization':window.localStorage.getItem('Authorization')
-            }
-        });
         //instance.post("http://1ba6198a.r3.cpolar.top/admin/Login")
         var btnEl = document.querySelector(".btn")
         btnEl.onclick = function () {
@@ -152,11 +148,28 @@
             stuAlterAwards:document.getElementById("stuAlterAwards").value,
             stuAlterJob:document.getElementById("stuAlterJob").value,
             stuAlterAcc:document.getElementById("stuAlterAcc").value
+        };
+        const formData ={
+            stuAnswer1:document.getElementById("stuAnswer1").value,
+            stuAnswer2:document.getElementById("stuAnswer2").value,
+            stuAcc:document.getElementById("stuAlterAcc").value,
+            stuAge:document.getElementById("stuAge").value,
+            stuSex:document.querySelector(".stuSex").value
         }
         console.log(formDataNeed);
-        //    location.href="./学生信息的中转站.html"
+        console.log(formData);
+        instance.post("/student/infoAmand1",formData)
+        .then(function(response){
+            const flag1 = response.data.code
+        })
+        instance.post("/student/infoAmand2",formDataNeed)
+        .then(function(response){
+            const flag2 = response.data.code
+        })
+        if(flag1==='ok'&&flag2==='ok'){
+            location.href="./学生信息的中转站.html"
         }
-        console.log(localStorage.getItem('demo'));
+    }
     </script>
 </body>
 

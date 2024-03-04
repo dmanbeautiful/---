@@ -130,3 +130,11 @@ button{
 input{
     outline: none;
 }
+.choose {
+    position: absolute;
+    right: 20px;
+}
+.choose button.active {
+    background-color: #fff;
+    color: aqua;
+}

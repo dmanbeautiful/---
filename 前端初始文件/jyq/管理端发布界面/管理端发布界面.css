@@ -122,10 +122,14 @@ button{
     border-radius: 5px;
     background-color: rgb(57, 129, 247);
 }
+button:hover{
+    background-color: rgb(63, 115, 198);
+}
 #search{
     width: 500px;
     height: 30px;
     border: none;
+    outline: none;
 }
 #search_stu{
     width: 150px;
