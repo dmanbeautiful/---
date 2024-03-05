@@ -30,6 +30,8 @@
             position: absolute;
             right: 5px;
             top: 30px;
+            width: 80px;
+            height: 80px;
         }
 
         .topShow {
@@ -125,12 +127,16 @@
             height: 35px;
             border: 1px solid;
             border-radius: 10px;
-            background-color:rgb(57, 129, 247);
+            background-color: rgb(57, 129, 247);
             color: white;
         }
 
         .control button:hover {
             background-color: rgb(63, 115, 198);
+        }
+
+        #pic:hover {
+            background-color: #fff;
         }
     </style>
 </head>
@@ -142,8 +148,8 @@
             <a href="#">
                 <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%85%AC%E5%91%8A.png" alt="" class="photo1">
             </a>
-            <a href="#"><img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E9%80%9A%E7%9F%A5.png" alt=""
-                    class="photo2">
+            <a href="#"><img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86.png" id="pic"
+                    width="40px" height="auto" class="photo2">
             </a>
         </div>
         <span class="middleInformation">个人资料</span>
@@ -178,41 +184,41 @@
         <div class="control">
             <button id="changeInfo">修改信息</button>
             <button id="changePass">修改密码</button>
-            <button id="exitLog">退出登录</button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
     <script>
-        instance.get("studengt/info")
-        .then(function(response){
-            const realData = response.data
-            window.localStorage.setItem('stuId',response.data.stuId)
-        })
-        .catch(function(error){
-            console.log(error);
-        })
-        var data = ['云','顶','书','院']
-        var spanoneEl = document.querySelectorAll(".basicShow span")
-        for(let i = 0;i < spanoneEl.length;i++){
-            spanoneEl[i].innerText = spanoneEl[i].innerText + data[i]
-        }
-        var spantwoEl = document.querySelectorAll(".schoolShow span")
-        for(let i = 0;i < spantwoEl.length;i++){
-            spantwoEl[i].innerText = spantwoEl[i].innerText + data[i]
-        }
+    instance.get("studengt/info")
+    .then(function(response){
+        const realData = response.data
+        window.localStorage.setItem('stuId',response.data.stuId)
+    })
+    .catch(function(error){
+        console.log(error);
+    })
+    var data = ['云','顶','书','院']
+    var spanoneEl = document.querySelectorAll(".basicShow span")
+    for(let i = 0;i < spanoneEl.length;i++){
+        spanoneEl[i].innerText = spanoneEl[i].innerText + data[i]
+    }
+    var spantwoEl = document.querySelectorAll(".schoolShow span")
+    for(let i = 0;i < spantwoEl.length;i++){
+        spantwoEl[i].innerText = spantwoEl[i].innerText + data[i]
+    }
         var infoEl = document.querySelector("#changeInfo");
         var passEl = document.querySelector("#changePass");
         var exitEl = document.querySelector("#exitLog");
+        var photo2 = document.querySelector('.photo2')
         infoEl.onclick = function () {
-            location.href="../wjy/修改学生信息(unfinished).html"//学生端修改信息(未完善)
+            location.href = "./个人信息.html"//学生端修改信息(未完善)
         }
         passEl.onclick = function () {
             location.href = "../sjy/修改密码/src/Change Code.html"
-        }   
-        exitEl.onclick = function () {
-            location.href = "../jyq/登录界面-again/登录界面.html"
         }
+        photo2.onclick = function () {
+            location.href = './学生信息的中转站.html'
+        }   
     </script>
 </body>
 

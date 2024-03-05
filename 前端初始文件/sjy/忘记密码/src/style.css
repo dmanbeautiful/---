@@ -1,92 +1,388 @@
-*{
-    margin:0;
-    padding:0;
+body {
+    margin: 0;
+    padding: 0;
 }
+
+.backGround {
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(210, 230, 255, 1), rgba(255, 0, 0, 0));
+    background-repeat: no-repeat;
+    height: 770px;
+    width: 1125px;
+    left: 50%;
+    margin-left: -600px;
+    padding-top: 30px;
+    padding-left: 75px;
+}
+
 .box {
-    height: 800px;
-    width: 1200px;
+    position: relative;
+    width: 1100px;
+    height: 600px;
+    left: 50%;
+    margin-left: -550px;
+    top: 100px;
+}
+
+.head {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 100px;
+    width: 1050px;
+    height: 100px;
+}
+
+.ydgl {
+    position: relative;
+    width: 250px;
+    height: 100px;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.box1 {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.pic {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-left: auto;
+}
+
+.column {
+    top: 20px;
+    width: 950px;
+    height: 36px;
+    padding-left: 100px;
+    position: relative;
+    display: inline-block;
+}
+
+.columnText {
+    width: 120px;
+    height: 36px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 80px;
+}
+
+.scanFrame {
+    width: 200px;
+    height: 36px;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 18px;
+    position: absolute;
+    right: 250px;
+}
+
+.scanBackground {
+    width: 36px;
+    height: 36px;
+    background-color: rgb(57, 129, 247);
+    border-radius: 50%;
+    position: absolute;
+    right: 200px;
+    top: 0px;
+}
+
+.scanBackground:hover {
+    background-color: rgb(63, 115, 198);
+}
+
+.scanImage {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    top: 8px;
+    left: 8px;
+}
+
+.studentList {
+    width: 500px;
+    height: 480px;
+    margin-top: 20px;
+    margin-left: 152px;
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-image: linear-gradient(to bottom, rgba(210, 230, 255, 1), rgba(255, 0, 0, 0));
-    left: 50%;
-    margin-left: -600px;
+    justify-content: space-between;
+    top: 20px;
 }
-.title{
-    width: 190px;
-    height: 46px;
-    margin-top:94px;
-    font-size: 42px;
-    font-weight: 700;
+
+.studentMessage {
+    flex: 1;
+    /* background-color:pink; */
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: rgba(255, 255, 255, 0.5);
 }
-.table{
-    width: 720px;
-    height: 306px;
-    background:rgba(255, 255, 255, 0.4);
-    margin-top:70px;
-    border-radius: 10px;
+
+.portrait {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 20px;
 }
-.changeCode{
-    width: 136px;
-    height: 66px;
-    font-size: 22px;
-    font-weight: 700;
-    /* 水平垂直居中 */
-    display: grid;
-    place-items: center;
-}
-.forms{
-    width: 680px;
-    height: 160px;
+
+.message {
+    width: 112px;
+    height: 60px;
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 10px;
+    /* background-color: salmon; */
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    /*设置内部子盒子文字样式*/
+    align-items: center;
 }
-.form{
-    flex:1;
-    width: 680px;
-    height: 38px;
+
+.name {
+    font-weight: 700;
+    /* background-color: khaki; */
 }
-.formText{
-    width: 90px;
-    height: 38px;
-    display: inline-block;
+
+.number {
+    /* background-color: wheat; */
+}
+
+.direction {
+    /* background-color: yellowgreen; */
+}
+
+.button {
+    width: 200px;
+    height: 32px;
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 25px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center; */
+}
+
+.buttonReset {
+    width: 52px;
+    height: 32px;
+    position: absolute;
+    border-radius: 5px;
+    line-height: 32px;
     text-align: center;
+    font-weight: 600;
+    background-color: rgb(57, 129, 247);
+    color: black;
+}
+
+.buttonReset:hover {
+    background-color: rgb(63, 115, 198);
+    color: white;
+}
+
+.buttonAlter {
+    width: 52px;
+    height: 32px;
+    position: absolute;
+    margin: 0 75px;
+    border-radius: 5px;
+    line-height: 32px;
+    text-align: center;
+    font-weight: 600;
+    background-color: rgb(57, 129, 247);
+}
+
+.buttonAlter:hover {
+    background-color: rgb(63, 115, 198);
+    color: white;
+}
+
+.buttonDelete {
+    width: 52px;
+    height: 32px;
+    position: absolute;
+    right: 0px;
+    border-radius: 5px;
+    line-height: 32px;
+    text-align: center;
+    font-weight: 600;
+    background: rgba(212, 48, 48, 1);
+}
+
+.buttonDelete:hover {
+    color: white;
+}
+
+.pagination {
+    width: 400px;
+    height: 200px;
+    /* background-color: pink; */
+    position: absolute;
+    margin-left: 300px;
+}
+
+.back {
+    position: absolute;
+    top: 380px;
+    right: 30px;
+}
+
+.btn {
+    height: 50px;
+    width: 100px;
+    border-radius: 25px;
+    background-color: wheat;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: red;
+}
+
+.box1:hover {
+    color: rgba(57, 129, 247);
+}
+
+.dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    position: absolute;
+    background-color: #f9f9f9;
+    top: 75px;
+    left: 45px;
+    height: 52px;
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.xj {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content a {
+    color: black;
+    height: 20px;
+    padding: 3px 6px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    align-items: center;
+    line-height: 20px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.xj:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+#pic:hover {
+    background-color: #fff;
+}
+
+.pagination {
+    width: 400px;
+    height: 35px;
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 50px;
+    display: flex;
 
 }
-.input{
-    width:560px;
-    height: 25px;
-    border-radius: 3px;
-}
-.button{
-    width: 220px;
-    height: 36px;
-    margin:0 auto;
-    background-color: #3b82f6;
-    border-radius: 10px;
-    font-size: 16px;
-    color:white;
-    text-align: center;
-    line-height: 36px;
-}
-.button:hover{
-    background-color: rgb(63, 115, 198);
-}
-.photo {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    top: 700px;
-    left: 100px;
-}
-.student {
-    font-weight: 700;
-    font-size: 30px;
-}
-input{
+
+button {
+    flex: 1;
+    background-color: white;
     border: none;
-    outline: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+.zs {
+    visibility: hidden;
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    top: 220px;
+    left: 50%;
+    margin-left: -250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 80px;
+    font-size: 18px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.xszs {
+    position: relative;
+    width: 400px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stuBox {
+    position: relative;
+    width: 170px;
+    height: 80px;
+}
+
+.show-box {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.praise {
+    position: relative;
+    width: 400px;
+    height: 200px;
+}
+
+.experience {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 120px;
+    line-height: 50px;
+}
+
+.close {
+    position: relative;
+    width: 20px;
+    height: 25px;
+    left: 220px;
+    top: 10px;
+}
+
+#close {
+    position: relative;
+    top: -15px;
 }

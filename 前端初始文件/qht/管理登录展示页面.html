@@ -169,6 +169,7 @@
                         <a href="../jyq/新管理注册/管理注册.html">管理端</a>
                     </div>
                 </div>
+                <div class="zs box1" id="showzs">展示</div>
                 <div class="pic">
                     <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86.png" id="pic"
                         width="35px" height="35px">
@@ -189,6 +190,10 @@
     </div>
 
     <script>
+        var showzsEl =document.querySelector("#showzs")
+        showzsEl.onclick=function(){
+            location.href="../qht/Chartshow.html"
+        }
         var showXjEl=document.querySelector("#showXj")
         showXjEl.onclick = function(){
             location.href="../sjy/管理信息/src/ManageMessage.html"

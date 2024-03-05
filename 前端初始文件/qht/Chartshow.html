@@ -5,19 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .showChart {
+            padding-top: 30px;
+            height: 770px;
+            width: 1200px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: linear-gradient(to bottom, rgba(210, 230, 255, 1), rgba(255, 0, 0, 0));
+            left: 50%;
+            margin-left: -600px;
+        }
+        .btn {
+            position: absolute;
+            top: 630px;
+            left: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <canvas id="myBarChart" width="00" height="200"></canvas>
+    <div class="showChart">
+        <canvas id="myBarChart" width="400" height="200"></canvas>
+        <button class="btn">返回</button>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         var ctx = document.getElementById('myBarChart').getContext('2d');
+        var formData = []
+        instance.get('/admin/chartInfo')
+        .then(function(response){
+            formData = response.data.data 
+        })
         var myChart = new Chart(ctx, {
             type: 'bar', // 指定图表类型为条形图  
             data: {
                 labels: ['Java', '全栈', '数据科学', 'CPU&OS', '秘书处', '设计'], // x轴标签  
                 datasets: [{
-                    label: 'My First Dataset', // 数据集标签  
+                    label: 'Data Show', // 数据集标签  
                     backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 206, 86)', 'rgb(75, 192, 192)', 'rgb(153, 102, 255)', 'rgb(255, 159, 64)'], // 条形颜色  
                     data: [12, 19, 3, 5, 2, 3] // 每个标签对应的数据值  
                 }]
@@ -30,6 +60,10 @@
                 }
             }
         });
+        var btnEl =document.querySelector(".btn")
+        btnEl.onclick = function(){
+            location.href='../qht/管理登录展示页面.html'
+        }
     </script>
 </body>
 
