@@ -15,8 +15,9 @@
         }
 
         .nav img {
-            height: 40px;
-            width: 40px;
+            top: 40px;
+            height: 30px;
+            width: 30px;
         }
 
         .photo1 {
@@ -80,8 +81,8 @@
         }
 
         .innerInformation img {
-            height: 40px;
-            width: 40px;
+            height: 35px;
+            width: 35px;
         }
 
         .basicShow {
@@ -121,16 +122,15 @@
         .control button {
             margin-top: 20px;
             width: 120px;
-            height: 30px;
+            height: 35px;
             border: 1px solid;
             border-radius: 10px;
-            background-color: skyblue;
-            color: aliceblue;
+            background-color:rgb(57, 129, 247);
+            color: white;
         }
 
         .control button:hover {
-            color: black;
-            background-color: red;
+            background-color: rgb(63, 115, 198);
         }
     </style>
 </head>
@@ -187,6 +187,7 @@
         instance.get("studengt/info")
         .then(function(response){
             const realData = response.data
+            window.localStorage.setItem('stuId',response.data.stuId)
         })
         .catch(function(error){
             console.log(error);

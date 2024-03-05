@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>管理注册</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .background {
+            position: relative;
+            background-image: linear-gradient(to bottom, rgba(210, 230, 255, 1), rgba(255, 0, 0, 0));
+            background-repeat: no-repeat;
+            height: 800px;
+            width: 1200px;
+            left: 50%;
+            margin-left: -600px;
+        }
+
+        .box {
+            position: relative;
+            width: 1050px;
+            height: 700px;
+            left: 50%;
+            margin-left: -525px;
+            top: 30px;
+        }
+
+        .head {
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            line-height: 100px;
+            width: 1050px;
+            height: 100px;
+        }
+
+        .ydgl {
+            position: relative;
+            width: 250px;
+            height: 100px;
+            font-size: 35px;
+            font-weight: 900;
+        }
+
+        .box1 {
+            position: relative;
+            width: 150px;
+            height: 100px;
+            font-size: 23px;
+            font-weight: 500;
+
+        }
+
+        .pic {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin-left: auto;
+        }
+
+        .dropdown-content {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s, visibility 0.5s;
+            position: absolute;
+            background-color: #f9f9f9;
+            top: 75px;
+            left: 45px;
+            height: 52px;
+            min-width: 60px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .xj {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            height: 20px;
+            padding: 3px 6px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            align-items: center;
+            line-height: 20px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .xj:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #pic:hover {
+            background-color: #fff;
+        }
+
+        .middleBox {
+            position: relative;
+            top: 10px;
+            width: 1030px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+
+        .downBox {
+            top: 30px;
+            position: relative;
+            width: 1030px;
+            height: 280px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            padding-left: 20px;
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .logStu {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .input {
+            position: relative;
+            border: none;
+            height: 25px;
+            width: 1000px;
+        }
+
+        .show {
+            margin: 10px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .box5 {
+            width: 1010px;
+            position: relative;
+            height: 70px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .information {
+            border: none;
+            width: 450px;
+            height: 25px;
+        }
+
+        .gender_direction {
+            height: 65px;
+        }
+
+        label {
+            margin: 10px;
+        }
+
+        .informationSpecial {
+            width: 450px;
+            height: 25px;
+            border: none;
+            outline: none;
+        }
+
+        .schedul_job {
+            height: 70px;
+        }
+
+        button {
+            position: relative;
+            top: 40px;
+            left: 50%;
+            margin-left: -60px;
+            width: 120px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            background-color: rgb(57, 129, 247);
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(63, 115, 198);
+        }
+
+        .box1:hover {
+            color: rgba(57, 129, 247);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="box">
+            <div class="head">
+                <div class="ydgl">云顶管理</div>
+                <div class="xx box1" id="showXj">信息</div>
+                <div class="fb box1" id="showFb">发布</div>
+                <div class="xj box1">新建
+                    <div class="dropdown-content">
+                        <a href="../../qht/学生注册.html">学生端</a>
+                        <a href="./管理注册.html">管理端</a>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86.png" id="pic"
+                        width="35px" height="35px">
+                </div>
+            </div>
+            <div class="middleBox">
+                <div class="logStu">注册管理</div>
+                <div class="show">账号</div>
+                <input type="text" class="showAcc input" id="showId">
+                <div class="show">密码</div>
+                <input type="password" class="showPas input" id="showMm">
+            </div>
+            <div class="downBox">
+                <div class="logStu">个人信息完善</div>
+                <div class="name_age box5">
+                    <span>
+                        <div class="innerWords show">姓名</div>
+                        <input type="text" class="information" id="name">
+                    </span>
+                    <span>
+                        <div class="innerWords show">年龄</div>
+                        <input type="text" class="information" id="age">
+                    </span>
+                </div>
+
+                <div class="gender_direction box5">
+                    <div class="gender">
+                        <div class="_gender show">性别</div>
+                        <label>
+                            <input type="radio" name="gender" value="male" class="amdSex">男
+                        </label>&nbsp;&nbsp;
+                        <label>
+                            <input type="radio" name="gender" value="female" class="admSex">女
+                        </label>
+                    </div>
+                    <div class="direction">
+                        <div class="innerWords show">从属方向</div>
+                        <select class="informationSpecial" id="direction">
+                            <option value="full">全栈</option>
+                            <option value="java">Java</option>
+                            <option value="shuKe">数据科学</option>
+                            <option value="cpu">CPU&OS</option>
+                            <option value="design">设计</option>
+                            <option value="secretary">秘书处</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="schedul_job box5">
+                    <span>
+                        <div class="innerWords show">从属学院</div>
+                        <input type="text" class="information" id="csxy">
+                    </span>
+                    <span>
+                        <div class="innerWords show">职位</div>
+                        <input type="textarea" class="information" id="zw">
+                    </span>
+                </div>
+            </div>
+
+            <button>提交</button>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
+    <script>
+        var button = document.getElementsByTagName('button');
+
+        button[0].addEventListener('click', function () {
+
+            var showId = document.getElementById('showId');
+            var showMm = document.getElementById('showMm');
+            var name = document.getElementById('name');
+            var age = document.getElementById('age');
+            var csxy = document.getElementById('csxy');
+            var zw = document.getElementById('zw');
+            var directionEl = document.getElementById('direction')
+            var admSexEl =document.querySelector(".admSex")
+
+            if (showId.value != '' && showMm.value != '') {
+                if (showMm.value.length >= 6) {
+                    if (name.value != '' && age.value != '' && csxy.value != '' && zw.value != '') {
+                        instance.post('/admin1/register',{
+                            amdAcc:showId.value,
+                            admPassword:showMm.value,
+                            admName:name.value,
+                            admAge:age.value,
+                            admSex:admSexEl.value,
+                            admCollege:csxy.value,
+                            admDirection:directionEl.value,
+                            admJob:zw.value
+                        })
+                        .then(function(response){
+                            if(response.data.code==='ok'){
+                                alert(`${response.data.msg}您的密匙为${response.data.admKey}`)
+                                location.href = '../../qht/管理登录展示页面.html'
+                            }
+                        })
+                    } else {
+                        alert('请检查个人信息是否全部完善')
+                    }
+                } else {
+                    alert('密码须不小于6位数哦')
+                }
+            }else{
+                alert('新账号密码必须填写哦')
+            }
+        })
+
+        var showXj = document.getElementById('showXj')
+            showXj.onclick = function () {
+                location.href = '../../sjy/管理信息/src/ManageMessage.html'
+            }
+        var showFb = document.getElementById('showFb')
+            showFb.onclick = function () {
+                location.href = '../管理端发布界面/管理端发布界面.html'
+            }
+        var picEl = document.querySelector(".pic")
+            picEl.onclick = function () {
+                location.href = "../../qht/管理登录展示页面.html"
+            }
+    </script>
+</body>
+
+</html>

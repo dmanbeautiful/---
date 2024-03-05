@@ -55,7 +55,7 @@ admLogEl.addEventListener('click', function() {
                     console.log(erro);
                 });
         }else{
-            axios.post("/student/Login", {
+            instance.post("/student/Login", {
                 admAcc: nameShowEl.value,
                 admPassword: passShowEl.value
             })

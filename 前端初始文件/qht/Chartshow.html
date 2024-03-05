@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myBarChart" width="00" height="200"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('myBarChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar', // 指定图表类型为条形图  
+            data: {
+                labels: ['Java', '全栈', '数据科学', 'CPU&OS', '秘书处', '设计'], // x轴标签  
+                datasets: [{
+                    label: 'My First Dataset', // 数据集标签  
+                    backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 206, 86)', 'rgb(75, 192, 192)', 'rgb(153, 102, 255)', 'rgb(255, 159, 64)'], // 条形颜色  
+                    data: [12, 19, 3, 5, 2, 3] // 每个标签对应的数据值  
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // y轴从0开始  
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

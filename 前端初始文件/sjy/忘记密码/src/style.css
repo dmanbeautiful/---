@@ -28,7 +28,7 @@
     border-radius: 10px;
 }
 .changeCode{
-    width: 100px;
+    width: 136px;
     height: 66px;
     font-size: 22px;
     font-weight: 700;
@@ -56,17 +56,23 @@
 
 }
 .input{
-    width:560px
+    width:560px;
+    height: 25px;
+    border-radius: 3px;
 }
 .button{
-    width: 224px;
+    width: 220px;
     height: 36px;
     margin:0 auto;
     background-color: #3b82f6;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 16px;
     color:white;
     text-align: center;
+    line-height: 36px;
+}
+.button:hover{
+    background-color: rgb(63, 115, 198);
 }
 .photo {
     position: absolute;
@@ -79,4 +85,8 @@
 .student {
     font-weight: 700;
     font-size: 30px;
+}
+input{
+    border: none;
+    outline: none;
 }

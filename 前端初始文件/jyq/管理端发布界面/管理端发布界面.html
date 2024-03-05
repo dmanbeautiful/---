@@ -17,7 +17,7 @@
                 <div class="xj box1">新建
                     <div class="dropdown-content">
                         <a href="../../qht/学生注册.html">学生端</a>
-                        <a href="../../qht/管理注册.html">管理端</a>
+                        <a href="../新管理注册/管理注册.html">管理端</a>
                     </div>
                 </div>
                 <div class="pic">
@@ -37,7 +37,7 @@
                         <input id="search_stu">
                     </div>
                     <div class="box3_title xxnr">消息内容</div>
-                    <textarea id="sr"></textarea><br>
+                    <textarea id="sr" class="personInfo"></textarea><br>
                     <button class="btn">发送</button>
                 </div>
                 <div class="fx box3">
@@ -59,13 +59,15 @@
                         </select>
                     </div>
                     <div class="box3_title xxnr">消息内容</div>
-                    <textarea id="sr"></textarea><br>
+                    <textarea id="sr" class="directionInfo"></textarea><br>
                     <button class="btnTwo">发送</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
     <script>
         var btnEl = document.querySelector(".btn")
         btnEl.addEventListener('click', function () {
@@ -73,7 +75,16 @@
             var name = document.getElementById('search_stu')
             if(name.value !== ''){
                 if(text1[0].value !== '' && text1[0].value !== ' '){
-                    alert('发送成功！')
+                    instance.post('/admin/infoRelease',{
+                        stuName:name.value,
+                        msg:text1[0].value
+                    })
+                    .then(function(response){
+                        if(response.data.code==='ok'){
+                            alert('发送成功！')
+                            location.href="../../qht/管理登录展示页面.html"
+                        }
+                    })
                 }else{
                     alert('请输入内容')
                 }
@@ -83,9 +94,19 @@
         })
         var btnTwoEl = document.querySelector(".btnTwo")
         btnTwoEl.addEventListener('click', function () {
+            var searchDirectionEl = document.getElementById('search')
             var text1 = document.getElementsByTagName('textarea')
             if(text1[1].value !== '' && text1[1].value !== ' '){
-                alert('发送成功！')
+                instance.post('/admin/infoRelease',{
+                    stuDirection:searchDirectionEl.value,
+                    msg:text1[1].value
+                })
+                .then(function(response){
+                    if(response.data.code==='ok'){
+                        alert('发送成功')
+                        location.href='../../qht/管理登录展示页面.html'
+                    }
+                })
             }else{
                 alert('请输入内容')
             }
