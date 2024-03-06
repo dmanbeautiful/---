@@ -189,23 +189,27 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
     <script>
-    instance.get("studengt/info")
-    .then(function(response){
-        const realData = response.data
-        window.localStorage.setItem('stuId',response.data.stuId)
-    })
-    .catch(function(error){
-        console.log(error);
-    })
-    var data = ['云','顶','书','院']
-    var spanoneEl = document.querySelectorAll(".basicShow span")
-    for(let i = 0;i < spanoneEl.length;i++){
-        spanoneEl[i].innerText = spanoneEl[i].innerText + data[i]
-    }
-    var spantwoEl = document.querySelectorAll(".schoolShow span")
-    for(let i = 0;i < spantwoEl.length;i++){
-        spantwoEl[i].innerText = spantwoEl[i].innerText + data[i]
-    }
+        instance.get("studengt/info")
+            .then(function (response) {
+                var realData = response.data
+                window.localStorage.setItem('stuId', response.data.stuId)
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+        //这里还需要对获得的data重构
+        var data = ['云', '顶', '书', '院']
+        var spanoneEl = document.querySelectorAll(".basicShow span")
+        for (let i = 0; i < spanoneEl.length; i++) {
+            spanoneEl[i].innerText = spanoneEl[i].innerText + data[i]
+        }
+        var spantwoEl = document.querySelectorAll(".schoolShow span")
+        for (let i = 0; i < spantwoEl.length; i++) {
+            spantwoEl[i].innerText = spantwoEl[i].innerText + data[i]
+        }
+        // if(realData[]==='1'){
+        //        spanoneEl[4]   spantwoEl  都要加上(审核中)
+        // }判断是否处于修改中，
         var infoEl = document.querySelector("#changeInfo");
         var passEl = document.querySelector("#changePass");
         var exitEl = document.querySelector("#exitLog");

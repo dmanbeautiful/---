@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
         }
+
         .box {
             height: 800px;
             width: 1200px;
@@ -157,10 +158,12 @@
         .btn:hover {
             background-color: rgb(63, 115, 198);
         }
-        #pic:hover{
+
+        #pic:hover {
             background-color: #fff;
         }
-        input{
+
+        input {
             border: none;
             height: 25px;
             width: 1000px;
@@ -174,7 +177,7 @@
             <div class="head">
                 <div class="ydgl">云顶管理</div>
                 <div class="xx box1">信息</div>
-                <div class="fb box1">发布</div>
+                <div class="fb box1" id="showFb">发布</div>
                 <div class="xj box1">新建
                     <div class="dropdown-content">
                         <a href="./学生注册.html">学生端</a>
@@ -184,7 +187,7 @@
                 <div class="pic">
                     <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86.png" id="pic"
                         width="35px" height="35px">
-                    
+
                 </div>
             </div>
             <div class="middleBox">
@@ -214,9 +217,9 @@
                 stuName: showStuEl.value
             })
                 .then(function (response) {
-                    if(response.data.code==='ok'){
+                    if (response.data.code === 'ok') {
                         alert(response.data.msg)
-                        location.href="./管理登录展示页面.html"
+                        location.href = "./管理登录展示页面.html"
                     }
                 })
                 .catch(function (erro) {
@@ -224,13 +227,17 @@
                 });
         }
         var picEl = document.querySelector(".pic")
-            picEl.onclick = function () {
-                location.href = "/qht/管理登录展示页面.html"
-            }
+        picEl.onclick = function () {
+            location.href = "/qht/管理登录展示页面.html"
+        }
         var xx = document.querySelector('.xx')
-            xx.onclick = function () {
-                location.href = "../sjy/管理信息/src/ManageMessage.html"
-            }
+        xx.onclick = function () {
+            location.href = "../sjy/管理信息/src/ManageMessage.html"
+        }
+        var showFbEl = document.getElementById('showFb')
+        showFbEl.onclick = function () {
+            location.href = '/Combat-projects/前端初始文件/jyq/管理端发布界面/管理端发布界面.html'
+        }
     </script>
 </body>
 

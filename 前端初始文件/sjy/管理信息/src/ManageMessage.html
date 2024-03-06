@@ -96,9 +96,9 @@
         <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
         <script>
             instance.get('/admin/getAll')
-            .then(function(response){
-                var stuAccStorage = rsponse.data
-            })
+                .then(function (response) {
+                    var stuAccStorage = rsponse.data
+                })
             //创建数组，目标是根据数组数据个数动态生成按钮，将数组的值赋给响应标签
             var objArray = [
                 { name: "张三", number: "123456", direction: "全栈" },
@@ -263,14 +263,14 @@
                 var buttonDeletes = document.querySelectorAll(".buttonDelete")
                 buttonResets.forEach((button, index) => {
                     button.addEventListener('click', function () {
-                         //window.sessionStorage.setItem('stuAcc',data[index])
-                         var stuNameShowEl = document.querySelector('.stuNameShow');
-                         var stuAccShowEl = document.querySelector(".stuAccShow");
-                         var stuDirectionShowEl = document.querySelector('.stuDirectionShow');
-                         var stuAwardsShowEl = document.querySelector(".stuAwardsShow");
-                         var stuSexShowEl = document.querySelector(".stuSexShow");
-                         var stuAgeShowEl = document.querySelector(".stuAgeShow");
-                         var stuJobShowEl = document.querySelector(".stuJobShow")
+                        //window.sessionStorage.setItem('stuAcc',data[index])
+                        var stuNameShowEl = document.querySelector('.stuNameShow');
+                        var stuAccShowEl = document.querySelector(".stuAccShow");
+                        var stuDirectionShowEl = document.querySelector('.stuDirectionShow');
+                        var stuAwardsShowEl = document.querySelector(".stuAwardsShow");
+                        var stuSexShowEl = document.querySelector(".stuSexShow");
+                        var stuAgeShowEl = document.querySelector(".stuAgeShow");
+                        var stuJobShowEl = document.querySelector(".stuJobShow")
                         // instance.get('/studengt/info',{
                         //     stuAcc: data[index]
                         // })
@@ -297,7 +297,7 @@
                 buttonAlters.forEach((button, index) => {
                     button.addEventListener('click', function () {
                         //window.sessionStorage.setItem('stuAcc',data[index])
-                        location.href ="/Combat-projects/前端初始文件/wjy/修改学生信息(unfinished).html"
+                        location.href = "/Combat-projects/前端初始文件/wjy/修改学生信息(unfinished).html"
                     })
                 })
                 buttonDeletes.forEach((button, index) => {
@@ -312,6 +312,14 @@
                             })
                     })
                 })
+            }
+            var showFbEl = document.getElementById('showFb')
+            showFbEl.onclick = function () {
+                location.href = '/Combat-projects/前端初始文件/jyq/管理端发布界面/管理端发布界面.html'
+            }
+            var picEl = document.getElementById("pic")
+            picEl.onclick = function(){
+                location.href='/Combat-projects/前端初始文件/qht/管理登录展示页面.html'
             }
         </script>
 </body>

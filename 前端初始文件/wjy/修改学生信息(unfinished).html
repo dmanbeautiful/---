@@ -292,7 +292,7 @@
             var completeEL = document.querySelector("#complete")
             var deleteActEl = document.querySelector("#deleteAct")
             var stuAccEL = document.getElementById("stuAcc");
-            stuAccEL.value = window.sessionStorage.getItem('stuAcc')
+            stuAccEL.value = window.sessionStorage.getItem('stuAcc')//从上一个页面存储的地方直接获取到相应的学生账号，以免多次重复输入
             completeEL.onclick = function(){
                 var stuCollegeEl = document.getElementById('stuCollege');
                 var stuJobEl = document.getElementById("stuJob");

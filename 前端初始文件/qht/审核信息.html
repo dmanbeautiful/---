@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
         }
+
         .box {
             height: 800px;
             width: 1200px;
@@ -124,95 +125,74 @@
             font-size: 30px;
         }
 
-        .changeAcc {
-            position: absolute;
-            top: 700px;
-            right: 100px;
-        }
-
-        .changeAcc button {
-            margin-left: 30px;
-            width: 80px;
-            height: 45px;
-            border-radius: 22px;
-            background-color: white;
-            font-weight: 700;
-            border: none;
-        }
-
-        .changeAcc button:hover {
-            background-color: rgba(57, 129, 247);
-            color: #f1f1f1;
-            font-weight: 700;
-        }
-
-        .reviewInfo {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            top: 150px;
-            height: 500px;
-            width: 900px;
-        }
-
-        .showReview {
+        .checkInfo {
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            margin: 10px 0;
-            width: 900px;
-            height: 250px;
-            background-color: rgba(255, 255, 255, 0.4);
-            padding-top:5px;
-            padding-bottom: 5px;
-            border-radius: 20px;
+            top: -160px;
+            background-color: rgba(220, 240, 190, 0.3);
+            height: 950px;
+            width: 1000px;
+        }
+        
+        .item-box {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 1000px;
+            height: 200px;
+        }
+        #pagination{
+            position: relative;
+            top: -120px;
+        }
+        #pagination a {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 0 2px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            background-color: #fff;
+            transition: background-color 0.3s ease;
         }
 
-        .showReview div {
-            position: relative;
-            left: 25px;
-            width: 800px;
-            height: 30px;
-        }
-
-        .anniu button {
-            position: relative;
-            top: -50px;
-            left: 720px;
-            height: 30px;
-            width: 50px;
-            border-radius: 20px;
-            border: none;
+        #pagination a.active {
+            background-color: #4CAF50;
             color: white;
-            background-color: rgba(57, 129, 247);
+            border-color: #4CAF50;
         }
 
-        .showReview div button:hover {
-            cursor: pointer;
-            background-color: rgb(63, 115, 198);
+        #pagination a:hover:not(.active) {
+            background-color: #ddd;
         }
 
-        .showReview img {
-            position: relative;
-            top: -10px;
-            height: 40px;
-            width: 40px;
+        #pagination .separator {
+            display: inline-block;
+            margin: 0 5px;
+            color: #ccc;
         }
-
-        .showReview div span {
-            position: relative;
-            top: -25px;
+        .agreeBtn:hover{
+            color: aqua;
+            background-color: #fff;
         }
-        #demo{
+        .refuseBtn:hover{
+            color: red;
+            background-color: #fff;
+        }
+        .agreeBtn{
             position: absolute;
+            top: 100px;
+            right: 10px;
         }
-        #bh{
-            background-color: white;
-            color: black;
-        }
-        #bh:hover{
-            background-color: #f9f9f9;
+        .refuseBtn {
+            position: absolute;
+            top: 160px;
+            right: 10px;
         }
     </style>
 
@@ -238,110 +218,112 @@
                 </div>
             </div>
         </div>
-        <!-- 书院，方向，获奖，职位 -->
-        <div class="reviewInfo">
-            <div class="showReview">
-                <span class="stuChangeNam" style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学生姓名:</span>
-                <div class="shuyuan">
-                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/学院切片 4.png" alt="">
-                    <span>书院:</span>
-                    <span></span>
-                    <div class="anniu">
-                        <button>同意</button>
-                        <button id="bh">驳回</button>
-                    </div>
-                </div>
-                <div class="fangxiang">
-                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/专业切片 2.png" alt="">
-                    <span>方向: </span>
-                    <span></span>
-                    <div class="anniu">
-                        <button>同意</button>
-                        <button id="bh">驳回</button>
-                    </div>
-                </div>
-                <div class="huojiang">
-                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/获奖经历切片 9.png" alt="">
-                    <span>获奖经历:</span>
-                    <span></span>
-                    <div class="anniu">
-                        <button>同意</button>
-                        <button id="bh">驳回</button>
-                    </div>
-                </div>
-                <div class="zhiwei">
-                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/方向新切片 10.png" alt="">
-                    <span>职位:</span>
-                    <span></span>
-                    <div class="anniu">
-                        <button>同意</button>
-                        <button id="bh">驳回</button>
-                    </div>
-                </div>
-            </div>
-            <div class="showReview">
-                <span class="stuChangeNam" style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学生姓名:</span>
-                <div class="shuyuan">
-                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/学院切片 4.png" alt="">
-                    <span>书院:</span>
-                    <span></span>
-                    <div class="anniu">
-                        <button>同意</button>
-                        <button id="bh">驳回</button>
-                    </div>
-                </div>
-                <div class="fangxiang">
-                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/专业切片 2.png" alt="">
-                    <span>方向: </span>
-                    <span></span>
-                    <div class="anniu">
-                        <button>同意</button>
-                        <button id="bh">驳回</button>
-                    </div>
-                </div>
-                <div class="huojiang">
-                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/获奖经历切片 9.png" alt="">
-                    <span>获奖经历:</span>
-                    <span></span>
-                    <div class="anniu">
-                        <button>同意</button>
-                        <button id="bh">驳回</button>
-                    </div>
-                </div>
-                <div class="zhiwei">
-                    <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/方向新切片 10.png" alt="">
-                    <span>职位:</span>
-                    <span></span>
-                    <div class="anniu">
-                        <button>同意</button>
-                        <button id="bh">驳回</button>
-                    </div>
-                </div>
-            </div>
+        <div id="showInfoCheck" class="checkInfo">
         </div>
+        <div id="pagination"></div>
         <div class="photo">
             <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统">
             <span class="student">学生管理系统</span>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
+        <script>
 
-    <script>
-        //var demoEl = document.querySelector("#demo")
-        //demoEl.onclick=function(){
-        //    localStorage.setItem("demo","token")
-        //}
-        var showXjEl = document.querySelector("#showXj")
-        showXjEl.onclick = function () {
-            location.href = "../sjy/管理信息/src/ManageMessage.html"
-        }
-        var showFbEl = document.querySelector("#showFb")
-        showFbEl.onclick = function () {
-            location.href = "../jyq/管理端发布界面/管理端发布界面.html"
-        }
-        var picEl = document.querySelector(".pic")
-        picEl.onclick = function () {
-            location.href = "./管理登录展示页面.html"
-        }
+            var checkData = ['项目1', '项目2', '项目3', '项目4', '项目5', '项目6', '项目7', '项目8', '项目9', '项目10'];
+            var currentPage = 1;
+            var pageSize = 2;
 
-    </script>
+            function createPage(page) {
+                var start = (page - 1) * pageSize;
+                var end = start + pageSize;
+                var contentDiv = document.getElementById('showInfoCheck');
+                contentDiv.innerHTML = ''; // 清空内容  
+
+                for (var i = start; i < end && i < checkData.length; i++) {
+                    var itemDiv = document.createElement('div');
+                    itemDiv.classList.add('item-box');
+                    contentDiv.appendChild(itemDiv);
+                    var spanMessage = document.createElement('span')
+                    spanMessage.textContent = '学生账号：'+checkData[i]
+                    spanMessage.classList.add('item-message')
+                    itemDiv.appendChild(spanMessage)
+                    var spanAwards = document.createElement('span')
+                    spanAwards.textContent = '奖项：'+checkData[i]
+                    spanAwards.classList.add('item-awards')
+                    itemDiv.appendChild(spanAwards)
+                    var spanDirection = document.createElement('span')
+                    spanDirection.textContent ='方向：'+checkData[i]
+                    spanDirection.classList.add('item-direction')
+                    itemDiv.appendChild(spanDirection)
+                    var spanJob = document.createElement('span')
+                    spanJob.textContent = '职务：'+checkData[i]
+                    spanJob.classList.add('item-job')
+                    itemDiv.appendChild(spanJob)
+                    var spanCollege = document.createElement('span')
+                    spanCollege.textContent = '学院：'+checkData[i]
+                    spanCollege.classList.add('item-college')
+                    itemDiv.appendChild(spanCollege)
+                    var agreeBtn = document.createElement('button')
+                    agreeBtn.textContent='同意'
+                    agreeBtn.classList.add('agreeBtn')
+                    itemDiv.appendChild(agreeBtn)
+                    var refuseBtn = document.createElement('button')
+                    refuseBtn.textContent = '驳回'
+                    refuseBtn.classList.add('refuseBtn')
+                    itemDiv.appendChild(refuseBtn)
+                    agreeBtn.onclick = function(){
+                        /*instance.post('/admin/infoCheck',{
+                            stuAcc:checkData[i]
+                        })
+                        .then(function(response){
+                            console.log(response)
+                        })
+                        */
+                    }
+                    refuseBtn.onclick = function(){
+                        alert('2')
+                    }
+                }
+
+
+                // 创建分页链接  
+                var paginationDiv = document.getElementById('pagination');
+                paginationDiv.innerHTML = ''; // 清空内容  
+
+                for (var page = 1; page <= Math.ceil(checkData.length / pageSize); page++) {
+                    var link = document.createElement('a');
+                    link.href = '#';
+                    link.textContent = page;
+                    link.onclick = function () {
+                        currentPage = parseInt(this.textContent);
+                        createPage(currentPage);
+                        return false; // 阻止链接的默认行为  
+                    };
+                    if (page === currentPage) {
+                        link.classList.add('active');
+                    }
+                    paginationDiv.appendChild(link);
+                }
+            }
+            createPage(currentPage);
+            // instance.get('/admin/getInfoCheck')
+            //     .then(function (response) {
+            //         var dataStorage = response.data
+            //     })
+            var showXjEl = document.querySelector("#showXj")
+            showXjEl.onclick = function () {
+                location.href = "../sjy/管理信息/src/ManageMessage.html"
+            }
+            var showFbEl = document.querySelector("#showFb")
+            showFbEl.onclick = function () {
+                location.href = "../jyq/管理端发布界面/管理端发布界面.html"
+            }
+            var picEl = document.querySelector(".pic")
+            picEl.onclick = function () {
+                location.href = "./管理登录展示页面.html"
+            }
+
+        </script>
 </body>
 
 </html>
