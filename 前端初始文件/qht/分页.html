@@ -2,75 +2,101 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #pagination button {
-            margin: 0 5px;
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            background-color: #f4f4f4;
-            cursor: pointer;
-        }
-
-        #pagination button:hover {
-            background-color: #ddd;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .item-box {
+      border: 1px solid #ccc;
+      /* 边框 */
+      padding: 10px;
+      /* 内边距 */
+      margin-bottom: 10px;
+      /* 下边距，用于分隔每个盒子 */
+      background-color: #f5f5f5;
+      /* 背景颜色 */
+      /* 可以添加更多样式 */
+    }
+  </style>
 </head>
 
 <body>
-    <div id="content">
-        <!-- 显示内容的区域 -->
-        <ul id="itemsList"></ul>
-    </div>
 
-    <div id="pagination">
-        <!-- 分页按钮将在这里动态生成 -->
-    </div>
-    <script>
-        // 假设你有一个包含所有数据的数组  
-        var allItems = ["Item 1", "Item 2", "Item 3", "1","5","5","4","9","8","7"];
 
-        // 每页显示的项目数量  
-        var itemsPerPage = 5;
+  <div id="data-container"></div>
 
-        // 当前页码  
-        var currentPage = 1;
+  <div id="pagination-controls">
+    <!-- 页码按钮将在这里动态生成 -->
+  </div>
+  <script>
+    // 假设这是你的数据源  
+    const data = [
+      { id: 1, name: 'Item 1' },
+      { id: 2, name: 'Item 2' },
+      { id: 2, name: 'Item 2' },
+      { id: 2, name: 'Item 2' },
+      { id: 2, name: 'Item 2' },
+      { id: 2, name: 'Item 2' },
+      { id: 2, name: 'Item 2' },
+      { id: 100, name: 'Item 100' }
+    ];
 
-        // 渲染列表  
-        function renderList(items, start, end) {
-            var list = document.getElementById('itemsList');
-            list.innerHTML = ''; // 清空列表  
+    const itemsPerPage = 5; // 每页显示10条数据  
 
-            for (var i = start; i < end && i < items.length; i++) {
-                var li = document.createElement('li');
-                li.textContent = items[i];
-                list.appendChild(li);
-            }
+    function renderPage(page) {
+      const startIndex = (page - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const pageData = data.slice(startIndex, endIndex);
+
+      const container = document.getElementById('data-container');
+      container.innerHTML = ''; // 清空容器内的内容  
+
+      pageData.forEach(item => {
+        // 创建盒子元素  
+        const itemBox = document.createElement('div');
+        itemBox.classList.add('item-box'); // 添加盒子样式类  
+
+        // 创建项目内容元素  
+        const itemContent = document.createElement('div');
+        itemContent.textContent = `ID: ${item.id}, Name: ${item.name}`;
+
+        // 将项目内容添加到盒子中  
+        itemBox.appendChild(itemContent);
+
+        // 将盒子添加到容器中  
+        container.appendChild(itemBox);
+      });
+
+      renderPaginationControls(page);
+    }
+
+    function renderPaginationControls(currentPage) {
+      const paginationControls = document.getElementById('pagination-controls');
+      paginationControls.innerHTML = ''; // 清空分页控件  
+
+      const totalPages = Math.ceil(data.length / itemsPerPage);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+        button.classList.add('pagination-button');
+        button.dataset.page = i;
+
+        if (i === currentPage) {
+          button.classList.add('active');
         }
 
-        // 渲染分页按钮  
-        function renderPagination(totalPages) {
-            var pagination = document.getElementById('pagination');
-            pagination.innerHTML = ''; // 清空分页控件  
+        button.addEventListener('click', function () {
+          renderPage(this.dataset.page);
+        });
 
-            for (var i = 1; i <= totalPages; i++) {
-                var button = document.createElement('button');
-                button.textContent = i;
-                button.addEventListener('click', function () {
-                    currentPage = parseInt(this.textContent);
-                    renderList(allItems, (currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-                });
-                pagination.appendChild(button);
-            }
-        }
+        paginationControls.appendChild(button);
+      }
+    }
 
-        // 初始渲染  
-        renderList(allItems, 0, itemsPerPage);
-        renderPagination(Math.ceil(allItems.length / itemsPerPage));
-    </script>
+    // 初始化，显示第一页数据  
+    renderPage(1);
+  </script>
 </body>
 
 </html>

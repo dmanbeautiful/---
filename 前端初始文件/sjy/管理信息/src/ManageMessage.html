@@ -64,30 +64,30 @@
                 </div>
                 <div class="name_age xszs">
                     <div class="stuBox">
-                        姓名：<span class="show_stuName show-box">江雨晴</span>
+                        姓名：<span class="show_stuName show-box" id="stuNameShow">江雨晴</span>
                     </div>
                     <div class="stuBox">
-                        年龄：<span class="show_stuAge show-box">18</span>
+                        年龄：<span class="show_stuAge show-box" id="stuAgeShow">18</span>
                     </div>
                 </div>
                 <div class="gender_id xszs">
                     <div class="stuBox">
-                        性别：<span class="show_stuGender show-box">女</span>
+                        性别：<span class="show_stuGender show-box" id="stuSexShow">女</span>
                     </div>
                     <div class="stuBox">
-                        学号：<span class="show_stuId show-box">2023004452</span>
+                        学号：<span class="show_stuId show-box" id="stuAccShow">2023004452</span>
                     </div>
                 </div>
                 <div class="direction_schedul xszs">
                     <div class="stuBox">
-                        方向：<span class="show_stuDirection show-box">全栈</span>
+                        方向：<span class="show_stuDirection show-box" id="stuDirectionShow">全栈</span>
                     </div>
                     <div class="stuBox">
-                        职位：<span class="show_stuJob show-box">学生</span>
+                        职位：<span class="show_stuJob show-box" id="stuJobShow">学生</span>
                     </div>
                 </div>
                 <div class="praise">
-                    <span>获奖经历：</span><span class="experience">无</span>
+                    <span>获奖经历：</span><span class="experience" id="stuAwardsShow">无</span>
                 </div>
             </div>
         </div>
@@ -95,10 +95,19 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
         <script>
-
+            instance.get('/admin/getAll')
+            .then(function(response){
+                var stuAccStorage = rsponse.data
+            })
             //创建数组，目标是根据数组数据个数动态生成按钮，将数组的值赋给响应标签
             var objArray = [
                 { name: "张三", number: "123456", direction: "全栈" },
+                { name: "李四", number: "234567", direction: "全栈" },
+                { name: "李四", number: "234567", direction: "全栈" },
+                { name: "李四", number: "234567", direction: "全栈" },
+                { name: "李四", number: "234567", direction: "全栈" },
+                { name: "李四", number: "234567", direction: "全栈" },
+                { name: "李四", number: "234567", direction: "全栈" },
                 { name: "李四", number: "234567", direction: "全栈" },
                 { name: "李四", number: "234567", direction: "全栈" },
                 { name: "李四", number: "234567", direction: "全栈" },
@@ -192,6 +201,7 @@
                     list.appendChild(divStudentMessage);
 
                 }
+                getAllElements();
             }
 
             // 渲染分页按钮  
@@ -210,6 +220,7 @@
 
                     // 必须为每个按钮添加**独立**的事件监听器
                     button.addEventListener('click', function () {
+                        renderList(1);
                         list.innerHTML = '';
 
                         // console.log(typeof button.innerHTML) ==> string
@@ -218,6 +229,7 @@
                         renderList(parseInt(this.innerHTML));
                     });
                 }
+
 
             }
             //先用一个renderList显示第一页列表，再切换
@@ -229,7 +241,6 @@
             //检查List函数中current处逻辑
 
             document.addEventListener('DOMContentLoaded', function () {
-                var fb = document.getElementsByClassName('fb')
                 fb[0].onclick = function () {
                     location.href = "../../../jyq/管理端发布界面/管理端发布界面.html";
                 }
@@ -246,42 +257,62 @@
                         }
                     })
             }
-            const stuAccStorage = {}
-            var buttonResets = document.querySelectorAll(".buttonReset")
-            buttonResets.forEach((button, index) => {
-                button.addEventListener('click', function () {
-                    var zsEl = document.querySelector('.zs')
-                    zsEl.style.visibility = 'visible'
-
-                    var close = document.getElementById('close');
-                    close.onclick = function () {
-                        var zs = document.getElementsByClassName('zs')
-                        zs[0].style.visibility = 'hidden';
-                    }
-                    //window.sessionStorage.setItem('stuAcc',data[index])
-                    //location.href =""
-                })
-            })
-            var buttonAlters = document.querySelectorAll(".buttonAlter")
-            buttonAlters.forEach((button, index) => {
-                button.addEventListener('click', function () {
-                    //window.sessionStorage.setItem('stuAcc',data[index])
-                    //location.href =""
-                })
-            })
-            var buttonDeletes = document.querySelectorAll(".buttonDelete")
-            buttonDeletes.forEach((button, index) => {
-                button.addEventListener('click', function () {
-                    instance.get('/admin/delete', {
-                        stuAcc: data[index]
+            function getAllElements() {
+                var buttonResets = document.querySelectorAll(".buttonReset")
+                var buttonAlters = document.querySelectorAll(".buttonAlter")
+                var buttonDeletes = document.querySelectorAll(".buttonDelete")
+                buttonResets.forEach((button, index) => {
+                    button.addEventListener('click', function () {
+                         //window.sessionStorage.setItem('stuAcc',data[index])
+                         var stuNameShowEl = document.querySelector('.stuNameShow');
+                         var stuAccShowEl = document.querySelector(".stuAccShow");
+                         var stuDirectionShowEl = document.querySelector('.stuDirectionShow');
+                         var stuAwardsShowEl = document.querySelector(".stuAwardsShow");
+                         var stuSexShowEl = document.querySelector(".stuSexShow");
+                         var stuAgeShowEl = document.querySelector(".stuAgeShow");
+                         var stuJobShowEl = document.querySelector(".stuJobShow")
+                        // instance.get('/studengt/info',{
+                        //     stuAcc: data[index]
+                        // })
+                        // .then(function(response){
+                        //     const getData = response.data.data
+                        //     stuNameShowEl.innerText = getData.stuName;
+                        //     stuAccShowEl.innerText = getData.stuAcc;
+                        //     stuAgeShowEl.innerText = getData.stuAge;
+                        //     stuAwardsShowEl.innerText = getData.stuAwards;
+                        //     stuDirectionShowEl.innerText = getData.stuDirection;
+                        //     stuSexShowEl.innerText = getData.stuSex;
+                        //     stuJobShowEl.innerText = getData.stuJob
+                        // })
+                        var zsEl = document.querySelector('.zs')
+                        zsEl.style.visibility = 'visible'
+                        var close = document.getElementById('close');
+                        close.onclick = function () {
+                            var zs = document.getElementsByClassName('zs')
+                            zs[0].style.visibility = 'hidden';
+                        }
+                        //location.href =""
                     })
-                        .then(function (response) {
-                            if (response.data.code === 'ok') {
-                                alert(response.data.msg)
-                            }
-                        })
                 })
-            })
+                buttonAlters.forEach((button, index) => {
+                    button.addEventListener('click', function () {
+                        //window.sessionStorage.setItem('stuAcc',data[index])
+                        location.href ="/Combat-projects/前端初始文件/wjy/修改学生信息(unfinished).html"
+                    })
+                })
+                buttonDeletes.forEach((button, index) => {
+                    button.addEventListener('click', function () {
+                        instance.get('/admin/delete', {
+                            stuAcc: data[index]
+                        })
+                            .then(function (response) {
+                                if (response.data.code === 'ok') {
+                                    alert(response.data.msg)
+                                }
+                            })
+                    })
+                })
+            }
         </script>
 </body>
 
