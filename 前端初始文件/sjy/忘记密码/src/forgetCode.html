@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>忘记密码</title>
+    <script src="index.js"></script>
+    <style>
+       *{
+    margin:0;
+    padding:0;
+}
+.box {
+    height: 800px;
+    width: 1200px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(210, 230, 255, 1), rgba(255, 0, 0, 0));
+    left: 50%;
+    margin-left: -600px;
+}
+.title{
+    width: 190px;
+    height: 46px;
+    margin-top:94px;
+    font-size: 42px;
+    font-weight: 700;
+}
+.table{
+    width: 720px;
+    height: 306px;
+    background:rgba(255, 255, 255, 0.4);
+    margin-top:70px;
+    border-radius: 10px;
+}
+.changeCode{
+    width: 100px;
+    height: 66px;
+    font-size: 22px;
+    font-weight: 700;
+    /* 水平垂直居中 */
+    display: grid;
+    place-items: center;
+}
+.forms{
+    width: 680px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.form{
+    flex:1;
+    width: 680px;
+    height: 38px;
+}
+.formText{
+    width: 90px;
+    height: 38px;
+    display: inline-block;
+    text-align: center;
+
+}
+.input{
+    width:560px
+}
+.button{
+    width: 224px;
+    height: 36px;
+    margin:0 auto;
+    background-color: #3b82f6;
+    border-radius: 10px;
+    font-size: 20px;
+    color:white;
+    text-align: center;
+}
+.photo {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    top: 700px;
+    left: 100px;
+}
+.student {
+    font-weight: 700;
+    font-size: 30px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="title">云顶学子</div>
+        <div class="table">
+            <div class="changeCode">忘记密码</div>
+            <!--创建表单-->
+            <div class="forms">
+                <div class="form">
+                    <span class="formText">密保信息1</span>
+                    <input type="text" class="input" id="firstInfo">
+                </div>
+                <div class="form">
+                    <span class="formText">密保信息2</span>
+                    <input type="text" class="input" id="secondInfo">
+                </div>
+                <div class="form">
+                    <span class="formText">账号</span>
+                    <input type="text" class="input" id="newCode">
+                </div>
+                <div class="form">
+                    <span class="formText">姓名</span>
+                    <input type="text" class="input" id="newName">
+                </div>
+            </div>
+            <div class="button">确认</div>
+        </div>
+        <!--添加底部图片-->
+        <div class="photo">
+            <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png">
+            <div class="student">学生管理系统</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/前端初始文件/网络请求/网络请求.js"></script>
+    <script>
+        var btnEl = document.querySelector(".button")
+        btnEl.onclick = function () {
+            var firstInfoEl = document.getElementById("firstInfo")
+            var secondInfoEl = document.getElementById('secondInfo')
+            var newCodeEl = document.getElementById('newCode')
+            var newNameEl = document.getElementById('newName')
+            instance.post('/student/passwordForget', {
+                stuName: newNameEl.value,
+                stuAcc: newCodeEl.value,
+
+            })
+            location.href = "../../../qht/展示信息.html"
+        }
+    </script>
+</body>
+
+</html>

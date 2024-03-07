@@ -76,7 +76,17 @@
         }
         .btn{
             position: absolute;
-            left: -40px;
+            width: 150px;
+            height: 50px;
+            background-color: rgb(57, 129, 247);
+            border: none;
+            border-radius: 13px;
+            color: white;
+            left: 450px;
+            top: 625px;
+        }
+        .btn:hover{
+            background-color: rgb(63, 115, 198);
         }
     </style>
 </head>
@@ -88,20 +98,20 @@
                 <span>通知</span>
             </div>
             <div class="back">
-                <span class="admName">管理发来的消息:</span>
-                <span class="showInfo">打算打算看看</span>
+                <div class="admName">管理发来的消息:</div>
+                <div class="showInfo">打算打算看看</div>
                 <div class="photo">
                     <img src="https://damn-meili.oss-cn-beijing.aliyuncs.com/%E5%AD%A6%E7%94%9F.png" alt="学生管理系统">
                     <span class="student">学生管理系统</span>
                 </div>
             </div>
-            <button class="btn">返回</button>
+            <button class="btn">确认收到</button>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
-    <script>
+    <script src="/前端初始文件/网络请求/网络请求.js"></script>
+    <script>/*
         var showInfoEl = document.querySelector(".showInfo")
         instance.get('/student/getMessage',{
             stuld:window.localStorage.getItem('stuId')
@@ -110,7 +120,7 @@
             if(response.data.code==='ok'){
                 showInfoEl.inneritext = response.data.data
             }
-        })
+        })*/
         var btnEl = document.querySelector(".btn")
         btnEl.onclick=function(){
             location.href = '../../qht/学生信息的中转站.html'

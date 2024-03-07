@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>24</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
         }
+
         .background {
             height: 800px;
             width: 1200px;
@@ -78,14 +79,15 @@
             font-weight: 700;
             font-size: 30px;
         }
+
         .right {
             position: absolute;
             width: 450px;
             height: 400px;
             display: flex;
             flex-direction: column;
-            top: 200px;
-            right: 350px;
+            top: 170px;
+            right: 380px;
         }
 
         .bx.b1 {
@@ -142,24 +144,29 @@
             position: relative;
             top: 120px;
         }
+
         .bx9 {
             top: 69px;
             position: relative;
             font-weight: 600;
         }
-        .bx10{
+
+        .bx10 {
             position: relative;
             top: 75px;
         }
-        .bx11{
+
+        .bx11 {
             top: 80px;
             position: relative;
             font-weight: 600;
         }
-        .bx12{
+
+        .bx12 {
             position: relative;
             top: 90px;
         }
+
         .bx8 .button {
             background-color: white;
         }
@@ -185,9 +192,11 @@
             position: absolute;
             top: 500px;
         }
-        #pic:hover{
+
+        #pic:hover {
             background-color: #fff;
         }
+
         .box1:hover {
             color: rgba(57, 129, 247);
         }
@@ -230,6 +239,19 @@
             opacity: 1;
             visibility: visible;
         }
+
+        .backButton {
+            background-color: white;
+            border: none;
+            border-radius: 8px;
+            width: 50px;
+            height: 33px;
+        }
+
+        .backButton:hover {
+            background-color: rgba(57, 129, 247);
+            color: white;
+        }
     </style>
 </head>
 
@@ -271,14 +293,17 @@
                 <input type="text" id="stuCollege" style="border: none;height: 28px;width: 450px; ">
             </div>
             <div class="bx6">方向</div>
-            <div class="bx7"><input type="text" id="stuDirection" style="border: none;height: 28px;width: 450px; "></div>
+            <div class="bx7"><input type="text" id="stuDirection" style="border: none;height: 28px;width: 450px; ">
+            </div>
             <div class="bx9">职务</div>
             <div class="bx10"><input type="text" id="stuJob" style="border: none;height: 28px;width: 450px; "></div>
             <div class="bx11">奖项</div>
             <div class="bx12"><input type="text" id="stuAwards" style="border: none;height: 28px;width: 450px; "></div>
             <div class="bx8">
-                <button class="button" id="complete" style="padding: 8px 13px; border-radius: 8px ;border: none; margin-right: 30px;">保存</button>
-                <button class="button" id="deleteAct" style="padding: 8px 13px; border-radius: 8px ;border: none;">取消</button>
+                <button class="button" id="complete"
+                    style="padding: 8px 13px; border-radius: 8px ;border: none; margin-right: 30px;">保存</button>
+                <button class="button" id="deleteAct"
+                    style="padding: 8px 13px; border-radius: 8px ;border: none;">取消</button>
             </div>
             <div class="bottom">
                 <div id="content">
@@ -288,32 +313,34 @@
                 </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="/前端初始文件/网络请求/网络请求.js"></script>
         <script>
             var completeEL = document.querySelector("#complete")
             var deleteActEl = document.querySelector("#deleteAct")
             var stuAccEL = document.getElementById("stuAcc");
             stuAccEL.value = window.sessionStorage.getItem('stuAcc')//从上一个页面存储的地方直接获取到相应的学生账号，以免多次重复输入
-            completeEL.onclick = function(){
+            completeEL.onclick = function () {
                 var stuCollegeEl = document.getElementById('stuCollege');
                 var stuJobEl = document.getElementById("stuJob");
                 var stuAwardsEl = document.getElementById('stuAwards');
                 var stuDirectionEl = document.getElementById("stuDirection")
-                instance.post('/admin/amand',{
-                    stuCollege:stuCollegeEl.value,
-                    stuDirection:stuDirectionEl.value,
-                    stuJob:stuJobEl.value,
-                    stuAwards:stuAwardsEl.value,
-                    stuAcc:stuAccEL.value
+                instance.post('/admin/amand', {
+                    stuCollege: stuCollegeEl.value,
+                    stuDirection: stuDirectionEl.value,
+                    stuJob: stuJobEl.value,
+                    stuAwards: stuAwardsEl.value,
+                    stuAcc: stuAccEL.value
                 })
-                .then(function(response){
-                    if(response.data.code==='ok'){
-                        alert(response.data.msg)
-                        location.href='../qht/管理登录展示页面.html'
-                    }
-                })
+                    .then(function (response) {
+                        if (response.data.code === 'ok') {
+                            alert(response.data.msg)
+                            location.href = '../qht/管理登录展示页面.html'
+                        }
+                    })
             }
-            deleteActEl.onclick = function(){
-                location.href='../sjy/管理信息/src/ManageMessage.html'
+            deleteActEl.onclick = function () {
+                location.href = '../sjy/管理信息/src/ManageMessage.html'
             }
             var backButtonEl = document.querySelector(".backButton")
             backButtonEl.onclick = function () {
@@ -329,9 +356,9 @@
                 location.href = "../jyq/管理端发布界面/管理端发布界面.html"
             }
             var picEl = document.querySelector(".pic")
-                picEl.onclick = function () {
-                    location.href = "../qht/管理登录展示页面.html"
-                }
+            picEl.onclick = function () {
+                location.href = "../qht/管理登录展示页面.html"
+            }
 
 
 

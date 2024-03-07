@@ -187,8 +187,8 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
-    <script>
+    <script src="/前端初始文件/网络请求/网络请求.js"></script>
+    <script>/*
         instance.get("studengt/info")
             .then(function (response) {
                 var realData = response.data
@@ -209,10 +209,11 @@
         }
         // if(realData[]==='1'){
         //        spanoneEl[4]   spantwoEl  都要加上(审核中)
-        // }判断是否处于修改中，
+        // }判断是否处于修改中，*/
         var infoEl = document.querySelector("#changeInfo");
         var passEl = document.querySelector("#changePass");
         var exitEl = document.querySelector("#exitLog");
+        var photo1 = document.querySelector('.photo1')
         var photo2 = document.querySelector('.photo2')
         infoEl.onclick = function () {
             location.href = "./个人信息.html"//学生端修改信息(未完善)
@@ -222,7 +223,10 @@
         }
         photo2.onclick = function () {
             location.href = './学生信息的中转站.html'
-        }   
+        }
+        photo1.onclick = function () {
+            location.href = '../jyq/学生通知/学生通知.html'
+        }
     </script>
 </body>
 

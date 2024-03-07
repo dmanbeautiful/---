@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         .showChart {
-            padding-top: 30px;
-            height: 770px;
+            padding-top: 50px;
+            height: 750px;
             width: 1200px;
             position: relative;
             display: flex;
@@ -20,8 +24,17 @@
         }
         .btn {
             position: absolute;
-            top: 630px;
+            top: 650px;
             left: 20px;
+            width: 50px;
+            height: 30px;
+            border: none;
+            background-color: #fff;
+            border-radius: 8px ;
+        }
+        .btn:hover{
+            color: white;
+            background-color: rgb(57, 129, 247);
         }
     </style>
 </head>
@@ -33,15 +46,15 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
+    <script src="/前端初始文件/网络请求/网络请求.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         var ctx = document.getElementById('myBarChart').getContext('2d');
         var formData = []
-        instance.get('/admin/chartInfo')
-        .then(function(response){
-            formData = response.data.data 
-        })
+    //    instance.get('/admin/chartInfo')
+    //    .then(function(response){
+    //        formData = response.data.data 
+    //    })
         var myChart = new Chart(ctx, {
             type: 'bar', // 指定图表类型为条形图  
             data: {

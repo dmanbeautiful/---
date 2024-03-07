@@ -7,10 +7,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="normol.css">
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
+
         .box {
             padding-top: 30px;
             height: 570px;
@@ -23,25 +24,27 @@
             left: 50%;
             margin-left: -600px;
         }
-        .manage{
-          position:absolute;
-          right: 20px;
-          top: 10px;
+
+        .manage {
+            position: absolute;
+            right: 20px;
+            top: 10px;
         }
-        .name{
-         position: absolute;
-         font-size: 22px;
-         left: 5px;
-         top: 45px;
-         color:powderblue;
-         text-shadow:0px 1px 0px #c0c0c0,
-	     0px 2px 0px #b0b0b0,
-	     0px 3px 0px #a0a0a0,
-	     0px 4px 0px #909090,
-	     0px 5px 10px rgba(0, 0, 0, .9);
-         writing-mode: vertical-rl; 
-        text-orientation: upright;
-        white-space: nowrap;
+
+        .name {
+            position: absolute;
+            font-size: 22px;
+            left: 5px;
+            top: 45px;
+            color: powderblue;
+            text-shadow: 0px 1px 0px #c0c0c0,
+                0px 2px 0px #b0b0b0,
+                0px 3px 0px #a0a0a0,
+                0px 4px 0px #909090,
+                0px 5px 10px rgba(0, 0, 0, .9);
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            white-space: nowrap;
         }
 
         .words {
@@ -118,13 +121,15 @@
         .btn:hover {
             background-color: rgb(63, 115, 198);
         }
-        .ssh{
+
+        .ssh {
             position: relative;
             left: -200px;
             color: cornflowerblue;
             font-size: 20px;
         }
-        .bax{
+
+        .bax {
             position: relative;
             left: -260px;
         }
@@ -134,7 +139,8 @@
 <body>
     <div class="box">
         <div class="manage">
-            <img src="https://wjyss.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86%E7%AB%AF.png" width="40px" height="40px" >
+            <img src="https://wjyss.oss-cn-beijing.aliyuncs.com/%E7%AE%A1%E7%90%86%E7%AB%AF.png" width="40px"
+                height="40px">
             <div class="name">管理端</div>
         </div>
         <span class="words">个人信息</span>
@@ -163,7 +169,7 @@
                 <option value="design">设计</option>
                 <option value="secretary">秘书处</option>
             </select>
-            <span class="innerWords">职位</span> 
+            <span class="innerWords">职位</span>
             <input type="textarea" class="information">
             <span class="innerWords">账号</span>
             <input type="text" class="information">
@@ -184,13 +190,13 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/Combat-projects/前端初始文件/网络请求/网络请求.js"></script>
+<script src="/前端初始文件/网络请求/网络请求.js"></script>
 <script>
     //instance.
     var bt = document.querySelector('.btn');
-        bt.onclick = function () {
-            location.href = "../../qht/管理登录展示页面.html"
-        }
+    bt.onclick = function () {
+        location.href = "../../qht/管理登录展示页面.html"
+    }
 </script>
 
 </html>
