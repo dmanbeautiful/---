@@ -67,7 +67,13 @@ label{
     top: 38px;
     color: rgba(116,116,116);
 }
-#sr{
+#username{
+    position: relative;
+    width: 545px;
+    height: 35px;
+    border: none;
+}
+#password {
     position: relative;
     width: 545px;
     height: 35px;

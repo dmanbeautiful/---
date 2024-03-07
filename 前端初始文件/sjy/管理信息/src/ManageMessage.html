@@ -248,17 +248,22 @@
             })
             var scanFrameEl = document.querySelector('.scanFrame')
             var scanImageEl = document.querySelector('.scanImage')
-            // scanImageEl.onclick = function () {
+            // scanImageEl.addEventListener('click', function () {
             //     instance.post('/admin/search', {
             //         stuName: scanFrameEl.value
             //     })
             //         .then(function (response) {
             //             if (response.data.code === 'ok') {
-            //                 更新数据库 var newData = response.data.data
-            //                     location.raload();
+            //                  更新数据库 var newData = response.data.data
+            //                 location.raload();
             //             }
             //         })
-            // }
+            // } )
+            // document.addEventListener('keydown',function(event){
+            //     if(event.keyCode === 13 && scanImageEl.value){
+            //         scanImageEl.click();
+            //     }
+            // })
             function getAllElements() {
                 var buttonResets = document.querySelectorAll(".buttonReset")
                 var buttonAlters = document.querySelectorAll(".buttonAlter")
@@ -320,8 +325,8 @@
                 location.href = '/Combat-projects/前端初始文件/jyq/管理端发布界面/管理端发布界面.html'
             }
             var picEl = document.getElementById("pic")
-            picEl.onclick = function(){
-                location.href='/前端初始文件/qht/管理登录展示页面.html'
+            picEl.onclick = function () {
+                location.href = '/前端初始文件/qht/管理登录展示页面.html'
             }
         </script>
 </body>
